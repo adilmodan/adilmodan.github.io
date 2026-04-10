@@ -1,13 +1,14 @@
 bio: >-
-  Engineer and builder in the Bay Area. I work on infrastructure
-  at scale and build tools on the side.
+  Platform Engineer at Apple. Building large-scale Kubernetes
+  infrastructure by day, halal fintech by night.
 
 beliefs:
-  - infrastructure that disappears when it's working.
-  - tools you barely notice until you need them.
-  - side projects that solve real problems.
-  - systems at the intersection of tech and faith.
-  - software for people who'd rather not think about software.
+  - "i build infrastructure. the invisible kind."
+  - "i think the best systems are the ones nobody notices — until they break."
+  - "i think there's beauty in software that just works. at scale. quietly."
+  - "i also think some communities get overlooked by tech."
+  - "so i'm building tools for them. starting with Islamic finance."
+  - "fewer things. but better things, for more people."
 
 about:
   - >-
@@ -37,8 +38,8 @@ about_labels:
 
 now:
   - Building Tijara
-  - Platform infrastructure at scale
-  - Training as a hybrid athlete
+  - Platform infra at scale
+  - Hybrid athlete training
   - Exploring Islamic finance
 
 footer:
