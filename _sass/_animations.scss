@@ -11,18 +11,15 @@
   }
 }
 
-// Page header entrance — immediate, staggered
-
-.page-header__name,
-.page-header__bio,
-.page-header__nav {
+// Hero entrance — staggered
+.home__name,
+.home__beliefs {
   opacity: 0;
   animation: enter 0.5s ease forwards;
 }
 
-.page-header__name { animation-delay: 0s; }
-.page-header__bio  { animation-delay: 0.08s; }
-.page-header__nav  { animation-delay: 0.16s; }
+.home__name    { animation-delay: 0s; }
+.home__beliefs { animation-delay: 0.12s; }
 
 @keyframes enter {
   from {
@@ -32,5 +29,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Respect reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .home__name,
+  .home__beliefs {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
   }
 }

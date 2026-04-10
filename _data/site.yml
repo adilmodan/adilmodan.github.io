@@ -1,38 +1,49 @@
 bio: >-
   Engineer and builder in the Bay Area. I work on infrastructure
-  at scale and build tools on the side — mostly at the intersection
-  of engineering, finance, and faith.
+  at scale and build tools on the side.
+
+beliefs:
+  - I design infrastructure that disappears when it's working.
+  - I think the best tools are the ones you barely notice.
+  - I think side projects should solve real problems.
+  - I believe good systems earn trust — you shouldn't have to think about them.
+  - I think there's a lot more to build at the intersection of tech and faith.
+  - One day I'll run a six-minute mile.
 
 about:
   - >-
-    Right now I'm a Platform Engineer working on large-scale Kubernetes
+    I'm a Platform Engineer working on large-scale Kubernetes
     infrastructure — the kind of systems that need to stay up when
-    millions of people show up at once. Observability, CI/CD, cloud
-    architecture, that sort of thing.
+    millions of people show up at once.
   - >-
-    I'm also building
+    I grew up building things. Before engineering, I founded
+    <strong>Marin CoWork</strong> — a coworking startup I took from
+    zero to profitable. I wrote all the software: CRM, payments
+    ($27M+ annually), analytics.
+  - >-
+    Today I'm building
     <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>,
-    a Shari'ah-compliant stock screening engine. It validates equities
-    against Islamic finance principles through a multi-stage pipeline.
-    More projects coming.
+    a Shari'ah-compliant stock screening engine. I studied Electrical
+    Engineering at San Francisco State University.
   - >-
-    Before all this, I founded <strong>Marin CoWork</strong> — a
-    coworking startup I took from zero to profitable. I wrote all the
-    software: CRM, payments ($27M+ annually across 5 vendors), analytics.
-  - >-
-    When I'm not building, I'm training (chasing a 6-minute mile and
-    10% body fat), at the mosque, or reading about markets.
+    When I'm not building, I'm training as a hybrid athlete, at the
+    mosque, or reading about markets and investing.
+
+about_labels:
+  - What I do
+  - Where I started
+  - What I'm building
+  - Outside of work
 
 now:
-  - Building Tijara — Shari'ah stock screening engine
-  - Working on platform infrastructure at scale
+  - Building Tijara
+  - Platform infrastructure at scale
   - Training as a hybrid athlete
-  - Exploring Islamic finance and quantitative investing
+  - Exploring Islamic finance
 
 colophon: >-
   Built with Jekyll and hosted on GitHub Pages. Set in Instrument Sans
-  and Libre Baskerville. No frameworks, no dependencies — just HTML,
-  CSS, and a few lines of vanilla JavaScript.
+  and Libre Baskerville.
 
 footer:
   credit: Adil Modan

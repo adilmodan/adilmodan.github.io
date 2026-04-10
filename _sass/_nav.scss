@@ -1,1 +1,55 @@
-// Nav — integrated into page header, no fixed nav needed
+// =========================================
+// Pill Navigation
+// =========================================
+
+.pill-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background-color: var(--color-card);
+  border-radius: 100px;
+  width: fit-content;
+  margin: 0 auto var(--space-xl);
+  box-shadow: var(--shadow-card);
+  z-index: 100;
+
+  // Mobile: fixed at bottom
+  @media (max-width: 700px) {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(245, 245, 245, 0.85);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+}
+
+[data-theme="dark"] .pill-nav {
+  @media (max-width: 700px) {
+    background-color: rgba(26, 26, 26, 0.85);
+  }
+}
+
+.pill-nav__item {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  color: var(--color-text-secondary);
+  transition: color var(--duration) var(--ease),
+              background-color var(--duration) var(--ease);
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &--active {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+}

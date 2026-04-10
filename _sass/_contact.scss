@@ -1,0 +1,88 @@
+// =========================================
+// Contact section (iMessage style)
+// =========================================
+
+.contact {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+// iMessage bubble
+.contact__bubble {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  margin-bottom: var(--space-lg);
+}
+
+.contact__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.contact__message {
+  background-color: var(--color-card);
+  border-radius: 18px 18px 18px 4px;
+  padding: 0.75rem 1rem;
+  max-width: 340px;
+  box-shadow: var(--shadow-card);
+}
+
+.contact__sender {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.2rem;
+}
+
+.contact__message p {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+// Contact cards grid
+.contact__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card--contact {
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg) var(--card-padding);
+
+  svg {
+    color: var(--color-text-tertiary);
+    transition: transform 0.3s var(--ease);
+  }
+
+  &:hover svg {
+    transform: scale(1.1);
+  }
+
+  .card__title {
+    font-size: var(--text-base);
+  }
+
+  .card__sublabel {
+    font-size: var(--text-xs);
+  }
+}
