@@ -20,12 +20,12 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 
 <script>
-  // Prevent flash of wrong theme
+  // Set theme immediately to prevent flash
   (function() {
     var t = localStorage.getItem('theme');
-    if (t) { document.documentElement.setAttribute('data-theme', t); }
-    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-theme', 'dark');
+    if (!t) {
+      t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
+    document.documentElement.setAttribute('data-theme', t);
   })();
 </script>

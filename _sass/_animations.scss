@@ -1,9 +1,9 @@
-// Hero entrance animation
+// Intro entrance — staggered fade
 
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -11,31 +11,13 @@
   }
 }
 
-.hero__greeting,
-.hero__name,
-.hero__title,
-.hero__subtitle,
-.hero__cta {
+.intro__name,
+.intro__bio,
+.intro__links {
   opacity: 0;
-  animation: fadeInUp 0.6s var(--ease) forwards;
+  animation: fadeIn 0.5s var(--ease) forwards;
 }
 
-.hero__greeting  { animation-delay: 0s; }
-.hero__name      { animation-delay: 0.1s; }
-.hero__title     { animation-delay: 0.2s; }
-.hero__subtitle  { animation-delay: 0.3s; }
-.hero__cta       { animation-delay: 0.4s; }
-
-// Scroll reveal — sections fade in on scroll
-
-.section.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--duration-slow) var(--ease),
-              transform var(--duration-slow) var(--ease);
-
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+.intro__name   { animation-delay: 0s; }
+.intro__bio    { animation-delay: 0.12s; }
+.intro__links  { animation-delay: 0.24s; }

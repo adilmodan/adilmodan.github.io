@@ -1,47 +1,46 @@
 .footer {
   padding: var(--space-xl) var(--space-md);
-  text-align: center;
   border-top: 1px solid var(--color-border);
+}
+
+.footer__inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
 }
 
 .footer__links {
   display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
 }
 
 .footer__link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--duration-fast) var(--ease);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color var(--duration-fast) var(--ease),
+              border-color var(--duration-fast) var(--ease);
 
   &:hover {
-    transform: translateY(-2px);
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
   }
-
-  img {
-    width: 20px;
-    height: 20px;
-    opacity: 0.45;
-    transition: opacity var(--duration-fast) var(--ease);
-  }
-
-  &:hover img {
-    opacity: 0.75;
-  }
-}
-
-// Invert icons for dark mode
-[data-theme="dark"] .footer__link img {
-  filter: invert(1);
 }
 
 .footer__credit {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--color-text-secondary);
+  color: var(--color-section-label);
 }

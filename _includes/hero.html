@@ -1,12 +1,11 @@
-<section class="hero" id="hero">
-  <div class="hero__inner">
-    <p class="hero__greeting reveal">{{ site.data.site.hero.greeting }}</p>
-    <h1 class="hero__name reveal">{{ site.data.site.hero.name }}</h1>
-    <h2 class="hero__title reveal">{{ site.data.site.hero.title }}</h2>
-    <p class="hero__subtitle reveal">{{ site.data.site.hero.subtitle }}</p>
-    <div class="hero__cta reveal">
-      <a href="{{ site.social[2].url }}" class="btn btn--primary">Get in Touch</a>
-      <a href="{{ site.resume }}" target="_blank" rel="noopener" class="btn btn--outline">Resume</a>
+<section class="intro" id="intro">
+  <div class="intro__inner">
+    <h1 class="intro__name">{{ site.data.site.hero.name }}</h1>
+    <p class="intro__bio">{{ site.data.site.hero.subtitle }}</p>
+    <div class="intro__links">
+      {% for link in site.social %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" class="intro__link">{{ link.name }}</a>
+      {% endfor %}
     </div>
   </div>
 </section>
