@@ -27,8 +27,9 @@ about:
     — a Shari'ah-compliant stock screening engine that validates
     equities against AAOIFI Islamic finance standards.
   - >-
-    When I'm not building, I'm training as a hybrid athlete, at the
-    mosque, or reading about markets and investing.
+    When I'm not building infrastructure, I'm building AI apps,
+    bots, and skills in my personal AI lab — or at the mosque,
+    or reading about markets and investing.
 
 about_labels:
   - What I do
@@ -46,7 +47,7 @@ now:
     color: "#C0392B"
   - label: Platform infra at scale
     color: "#2ecc71"
-  - label: Hybrid athlete training
+  - label: Building AI apps & skills
     color: "#3498db"
   - label: Exploring Islamic finance
     color: "#f39c12"
@@ -89,7 +90,7 @@ tijara_screening:
     label: Non-compliant
 
 interests:
-  - Hybrid athlete training
+  - AI apps, bots & skills
   - Markets & investing
   - Islamic finance
   - Infrastructure at scale
