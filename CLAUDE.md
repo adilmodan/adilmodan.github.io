@@ -7,14 +7,14 @@ Adil Modan — Platform Engineer at Apple, Bay Area, CA.
 - **Generator**: Jekyll (GitHub Pages native)
 - **Styling**: SCSS via Jekyll built-in SASS compilation (`_sass/` directory)
 - **JavaScript**: Vanilla ES6+, zero dependencies (~50 lines in `js/main.js`)
-- **Fonts**: Syne (display), Newsreader (serif prose), DM Sans (UI), JetBrains Mono (mono) — all Google Fonts
+- **Fonts**: Libre Baskerville (display serif), Instrument Sans (UI), IBM Plex Mono (mono) — all Google Fonts
 - **Deployment**: GitHub Pages, auto-builds on push to `master`
 - **Custom domain**: adilmodan.com (via CNAME)
 
 ## Design System — "Structural"
 Warm, architectural aesthetic. Distinctive burnt copper/amber accent palette (NOT tech-blue).
-- Light: warm paper `#F5F0EB`, copper accent `#C45D3E`
-- Dark: warm black `#141210`, amber accent `#E09F5C`
+- Light: near-white `#FAFAF8`, copper accent `#B85C38`
+- Dark: warm black `#111110`, amber accent `#D4956A`
 - All colors via CSS custom properties on `[data-theme]` attribute on `<html>`
 - Section labels use `// 01 about` code-comment style in mono font
 - Noise texture overlay via CSS SVG filter
@@ -47,7 +47,15 @@ git push origin master
 ```
 GitHub Pages auto-builds Jekyll.
 
-## Conventions
+## Tone
+This is a personal site, not a resume. Content is personal and project-focused.
+The about section talks about interests and what Adil builds, not job metrics.
+Experience section is kept brief — one-line descriptions, no bullet points.
+Projects section is prominent (second section after about).
+
+## Future Plans
+- Newsletter section (planned, not yet implemented)
+- More project cards as they ship
 - Semantic HTML5, BEM-style CSS class naming
 - CSS custom properties for all colors (never hardcode)
 - SCSS partials scoped per section

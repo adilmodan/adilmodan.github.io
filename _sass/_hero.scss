@@ -22,30 +22,30 @@
 .hero__name {
   font-family: var(--font-display);
   font-size: var(--text-hero);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--color-text);
   margin-bottom: var(--space-xs);
 }
 
 .hero__title {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: var(--text-3xl);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
 }
 
 .hero__subtitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--text-lg);
-  font-style: italic;
+  font-weight: 400;
   color: var(--color-text-secondary);
-  max-width: 600px;
-  line-height: 1.6;
+  max-width: 560px;
+  line-height: 1.65;
   margin-bottom: var(--space-lg);
 }
 

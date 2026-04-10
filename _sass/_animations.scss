@@ -26,29 +26,16 @@
 .hero__subtitle  { animation-delay: 0.3s; }
 .hero__cta       { animation-delay: 0.4s; }
 
-// Scroll reveal
+// Scroll reveal — sections fade in on scroll
 
-.reveal {
+.section.reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--duration-slow) var(--ease),
               transform var(--duration-slow) var(--ease);
-}
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-// Hero children should not use scroll-reveal opacity
-// (they use their own keyframe animation)
-.hero .reveal {
-  opacity: 0;
-  transform: none;
-  transition: none;
-}
-
-.hero.is-visible .reveal {
-  opacity: 0; // Let keyframe handle it
-  transform: none;
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

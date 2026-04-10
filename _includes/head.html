@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ site.title }}</title>
 <meta name="description" content="{{ site.description }}">
-<meta name="keywords" content="platform engineer, kubernetes, infrastructure, devops, adil modan, apple">
+<meta name="keywords" content="platform engineer, kubernetes, infrastructure, devops, adil modan">
 <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/logo/am.png">
 
 <meta property="og:title" content="{{ site.title }}">
@@ -15,6 +15,17 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Newsreader:ital,wght@0,400;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+<script>
+  // Prevent flash of wrong theme
+  (function() {
+    var t = localStorage.getItem('theme');
+    if (t) { document.documentElement.setAttribute('data-theme', t); }
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>

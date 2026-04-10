@@ -4,20 +4,19 @@
 
 :root {
   // Typography families
-  --font-display: 'Syne', sans-serif;
-  --font-serif: 'Newsreader', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 
   // Fluid type scale
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);
   --text-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.9rem);
   --text-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
-  --text-lg: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
-  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
-  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
-  --text-hero: clamp(3rem, 2rem + 5vw, 5.5rem);
+  --text-lg: clamp(1.05rem, 0.95rem + 0.5vw, 1.2rem);
+  --text-xl: clamp(1.2rem, 1.05rem + 0.75vw, 1.4rem);
+  --text-2xl: clamp(1.4rem, 1.1rem + 1.5vw, 1.85rem);
+  --text-3xl: clamp(1.75rem, 1.3rem + 2.25vw, 2.5rem);
+  --text-hero: clamp(2.5rem, 1.5rem + 5vw, 4.5rem);
 
   // Spacing scale
   --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
@@ -43,31 +42,31 @@
   --radius-lg: 12px;
 
   // Light theme (default)
-  --color-bg: #F5F0EB;
+  --color-bg: #FAFAF8;
   --color-bg-elevated: #FFFFFF;
-  --color-text: #1C1C1C;
-  --color-text-secondary: #6B6560;
-  --color-accent: #C45D3E;
-  --color-accent-hover: #A8492F;
-  --color-accent-subtle: rgba(196, 93, 62, 0.08);
-  --color-border: #E0D8CF;
-  --color-surface: #EDE7E0;
-  --color-section-label: #B0A89F;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-accent: #B85C38;
+  --color-accent-hover: #9A4A2E;
+  --color-accent-subtle: rgba(184, 92, 56, 0.07);
+  --color-border: #E5E5E0;
+  --color-surface: #F0F0EC;
+  --color-section-label: #ADADAD;
 
   // Noise overlay opacity
-  --noise-opacity: 0.03;
+  --noise-opacity: 0.025;
 }
 
 [data-theme="dark"] {
-  --color-bg: #141210;
-  --color-bg-elevated: #1E1C19;
-  --color-text: #E8E0D6;
-  --color-text-secondary: #9B9389;
-  --color-accent: #E09F5C;
-  --color-accent-hover: #C88A4A;
-  --color-accent-subtle: rgba(224, 159, 92, 0.1);
-  --color-border: #2A2622;
-  --color-surface: #1A1816;
-  --color-section-label: #5A5550;
+  --color-bg: #111110;
+  --color-bg-elevated: #1A1A18;
+  --color-text: #EDEDEB;
+  --color-text-secondary: #999996;
+  --color-accent: #D4956A;
+  --color-accent-hover: #E0A87E;
+  --color-accent-subtle: rgba(212, 149, 106, 0.1);
+  --color-border: #2A2A28;
+  --color-surface: #161614;
+  --color-section-label: #555553;
   --noise-opacity: 0.02;
 }

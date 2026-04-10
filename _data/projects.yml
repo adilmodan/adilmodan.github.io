@@ -1,8 +1,8 @@
 - name: Tijara
   description: >-
-    AAOIFI-compliant Shari'ah stock screening engine that validates
-    financial instruments against Islamic finance principles. Multi-stage
-    pipeline covering qualitative screening, quantitative ratios,
+    A Shari'ah-compliant stock screening engine. Validates equities
+    against AAOIFI Islamic finance standards through a multi-stage
+    pipeline — qualitative screening, financial ratio analysis,
     tangibility checks, and zakah computation.
   url: https://tijara-five.vercel.app
   github: https://github.com/adilmodan/tijara
@@ -18,8 +18,8 @@
 
 - name: Coming Soon
   description: >-
-    More projects in the pipeline. Building tools at the intersection
-    of infrastructure, finance, and faith.
+    More projects are in the works — tools at the intersection of
+    infrastructure, finance, and faith.
   tech: []
   featured: false
   status: coming_soon

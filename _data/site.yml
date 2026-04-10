@@ -1,30 +1,30 @@
 hero:
   greeting: "Hi, I'm"
   name: Adil Modan
-  title: Platform Engineer
+  title: Engineer & Builder
   subtitle: >-
-    I build and operate large-scale Kubernetes infrastructure at Apple,
-    powering reliable systems for 60+ microservices across 48 clusters.
+    I build things — from large-scale infrastructure platforms to
+    Islamic finance tools to this website. Based in the Bay Area.
 
 about:
   paragraphs:
     - >-
-      I'm a Platform Engineer at <a href="https://www.apple.com/" target="_blank" rel="noopener">Apple</a>,
-      where I operate the Kubernetes infrastructure behind some of the
-      world's largest product launches — handling 120M+ requests per launch weekend.
+      I'm an engineer who likes building systems that work at scale and
+      tools that solve real problems. By day, I work on platform
+      infrastructure — Kubernetes, observability, CI/CD — the stuff that
+      keeps services running when millions of people show up at once.
     - >-
-      I led our org-wide observability migration from Splunk to Grafana and Prometheus,
-      rolling it out across 16 teams and 120 stakeholders. The result: 92% latency reduction,
-      63% fewer incidents, and zero launch downtime.
+      On the side, I'm building <a href="https://tijara-five.vercel.app"
+      target="_blank" rel="noopener">Tijara</a>, a Shari'ah-compliant
+      stock screening engine rooted in Islamic finance principles. More
+      projects are on the way.
     - >-
-      Before Apple, I was a Software Engineer at
-      <a href="https://www.tcs.com/" target="_blank" rel="noopener">TCS</a> and founded
-      <strong>Marin CoWork</strong> — a profitable coworking startup where I built the
-      platform that processed over $27M in annual payments.
+      Before engineering, I founded <strong>Marin CoWork</strong> — a
+      coworking startup I built from zero to profitable, writing the
+      software that powered everything from CRM to payments.
     - >-
-      I studied Electrical Engineering at San Francisco State University.
-      Outside of work, I'm training as a hybrid athlete and exploring
-      Islamic finance through projects like Tijara.
+      When I'm not building, I'm probably training (chasing a 6-minute
+      mile), at the mosque, or reading about markets.
 
 footer:
   credit: Designed & Built by Adil Modan
