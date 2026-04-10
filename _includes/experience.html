@@ -1,20 +1,25 @@
-<section class="section experience">
-  <div class="section__title">Experience</div>
+<section class="section experience reveal" id="experience">
+  <div class="section__label">// 02 experience</div>
   <div class="section__content">
-    <div class="jobs">
+    <h2 class="section__heading">Experience</h2>
+    <div class="experience__list">
       {% for job in site.data.experience %}
-      <div class="job">
-        <div class="time-place">
-          <div class="job__company">
-            <a href="{{job.url}}" target="_blank">{{job.company}}</a>
+      <div class="experience__item">
+        <div class="experience__header">
+          <div class="experience__role">
+            <h3 class="experience__position">{{ job.position }}</h3>
+            <span class="experience__company">
+              <a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.company }}</a>
+            </span>
           </div>
-          <div class="job__time">{{job.time}}</div>
+          <span class="experience__time">{{ job.time }}</span>
         </div>
-        <div class="job__position">{{job.position}}</div>
+        {% if job.description %}
+        <p class="experience__description">{{ job.description }}</p>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
-
-    <a href="{{site.resume}}" target="_blank" class="arrow-link">View My Resume</a>
+    <a href="{{ site.resume }}" target="_blank" rel="noopener" class="btn btn--outline">View Full Resume</a>
   </div>
 </section>

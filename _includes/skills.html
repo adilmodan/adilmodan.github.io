@@ -1,44 +1,18 @@
-<section class="section skills">
-  <div class="section__title">Skills</div>
+<section class="section skills reveal" id="skills">
+  <div class="section__label">// 03 skills</div>
   <div class="section__content">
-    <div class="skillz">
-
-      <div class="skillz__category">
-        <div class="skillz__category__label">Languages</div>
-        <ul>  
-          {% for language in site.data.skills.languages %}
-          <li class="skillz__category__item">{{language.item}}</li>
+    <h2 class="section__heading">Skills</h2>
+    <div class="skills__grid">
+      {% for category in site.data.skills %}
+      <div class="skills__category">
+        <h3 class="skills__label">{{ category.label }}</h3>
+        <ul class="skills__list">
+          {% for item in category.items %}
+          <li class="skills__item">{{ item }}</li>
           {% endfor %}
         </ul>
       </div>
-
-      <div class="skillz__category">
-        <div class="skillz__category__label">Frameworks</div>
-        <ul>
-          {% for framework in site.data.skills.frameworks %}
-          <li class="skillz__category__item">{{framework.item}}</li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="skillz__category">
-        <div class="skillz__category__label">Tools</div>
-        <ul>
-          {% for tool in site.data.skills.tools %}
-          <li class="skillz__category__item">{{tool.item}}</li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="skillz__category">
-        <div class="skillz__category__label">Skills</div>
-        <ul>
-          {% for thing in site.data.skills.skills %}
-          <li class="skillz__category__item">{{thing.item}}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      
+      {% endfor %}
     </div>
   </div>
 </section>

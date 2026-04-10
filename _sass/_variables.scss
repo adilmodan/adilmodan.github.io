@@ -1,0 +1,73 @@
+// =============================================
+// Design Tokens — "Structural" Design System
+// =============================================
+
+:root {
+  // Typography families
+  --font-display: 'Syne', sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  // Fluid type scale
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.9rem);
+  --text-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --text-lg: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  --text-hero: clamp(3rem, 2rem + 5vw, 5.5rem);
+
+  // Spacing scale
+  --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  --space-xl: clamp(3rem, 2rem + 5vw, 6rem);
+  --space-2xl: clamp(5rem, 3rem + 8vw, 10rem);
+
+  // Layout
+  --max-width: 1100px;
+  --nav-height: 64px;
+
+  // Transitions
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 500ms;
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  // Radius
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  // Light theme (default)
+  --color-bg: #F5F0EB;
+  --color-bg-elevated: #FFFFFF;
+  --color-text: #1C1C1C;
+  --color-text-secondary: #6B6560;
+  --color-accent: #C45D3E;
+  --color-accent-hover: #A8492F;
+  --color-accent-subtle: rgba(196, 93, 62, 0.08);
+  --color-border: #E0D8CF;
+  --color-surface: #EDE7E0;
+  --color-section-label: #B0A89F;
+
+  // Noise overlay opacity
+  --noise-opacity: 0.03;
+}
+
+[data-theme="dark"] {
+  --color-bg: #141210;
+  --color-bg-elevated: #1E1C19;
+  --color-text: #E8E0D6;
+  --color-text-secondary: #9B9389;
+  --color-accent: #E09F5C;
+  --color-accent-hover: #C88A4A;
+  --color-accent-subtle: rgba(224, 159, 92, 0.1);
+  --color-border: #2A2622;
+  --color-surface: #1A1816;
+  --color-section-label: #5A5550;
+  --noise-opacity: 0.02;
+}

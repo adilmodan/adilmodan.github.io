@@ -1,0 +1,11 @@
+<section class="section about reveal" id="about">
+  <div class="section__label">// 01 about</div>
+  <div class="section__content">
+    <h2 class="section__heading">About Me</h2>
+    <div class="about__text">
+      {% for paragraph in site.data.site.about.paragraphs %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,26 +1,36 @@
-languages:  
-  - item: Python
-  - item: JavaScript (ES6)
-  - item: Java
-  - item: Kubernetes
-  - item: Terraform
+- label: Infrastructure
+  items:
+    - Kubernetes
+    - AWS
+    - Docker
+    - Terraform
+    - Kustomize
+    - Helm
+    - Linux
 
-skills:
-  - item: Web Development
-  - item: Data Modeling and Analysis
-  - item: Scripting
-  - item: Building IAC Pipelines
+- label: Observability
+  items:
+    - Grafana
+    - Prometheus
+    - PromQL
+    - Thanos
+    - Splunk
+    - OpenTelemetry
 
+- label: CI/CD & Security
+  items:
+    - GitHub Actions
+    - ArgoCD
+    - Jenkins
+    - OPA Gatekeeper
+    - RBAC
+    - IAM
 
-tools:
-  - item: Git & Github
-  - item: MongoDB
-  - item: SQL
-  - item: Bootstrap
-  - item: AWS
-
-
-frameworks:
-  - item: Angular
-  - item: Node JS
-  - item: React JS
+- label: Languages
+  items:
+    - Python
+    - Bash
+    - Java
+    - Scala
+    - JavaScript
+    - SQL

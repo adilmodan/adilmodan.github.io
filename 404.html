@@ -1,10 +1,11 @@
 ---
-layout: not_found
+layout: default
 title: 404
 permalink: /404.html
 ---
-{% include switch.html %}
-<div class="name">Adil Modan</div>
-<img src="{{site.baseurl}}/img/emojis/thinking-face.png" alt="">
-<h1>Hmmm...</h1>
-<h2>Looks like there's nothing here.<br>Maybe you should go back <a href="{{site.url}}">home</a>.</h2>
+
+<section class="not-found">
+  <h1 class="not-found__code">404</h1>
+  <p class="not-found__message">This page doesn't exist.</p>
+  <a href="{{ site.url }}" class="btn btn--primary">Go Home</a>
+</section>

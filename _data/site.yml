@@ -1,0 +1,30 @@
+hero:
+  greeting: "Hi, I'm"
+  name: Adil Modan
+  title: Platform Engineer
+  subtitle: >-
+    I build and operate large-scale Kubernetes infrastructure at Apple,
+    powering reliable systems for 60+ microservices across 48 clusters.
+
+about:
+  paragraphs:
+    - >-
+      I'm a Platform Engineer at <a href="https://www.apple.com/" target="_blank" rel="noopener">Apple</a>,
+      where I operate the Kubernetes infrastructure behind some of the
+      world's largest product launches — handling 120M+ requests per launch weekend.
+    - >-
+      I led our org-wide observability migration from Splunk to Grafana and Prometheus,
+      rolling it out across 16 teams and 120 stakeholders. The result: 92% latency reduction,
+      63% fewer incidents, and zero launch downtime.
+    - >-
+      Before Apple, I was a Software Engineer at
+      <a href="https://www.tcs.com/" target="_blank" rel="noopener">TCS</a> and founded
+      <strong>Marin CoWork</strong> — a profitable coworking startup where I built the
+      platform that processed over $27M in annual payments.
+    - >-
+      I studied Electrical Engineering at San Francisco State University.
+      Outside of work, I'm training as a hybrid athlete and exploring
+      Islamic finance through projects like Tijara.
+
+footer:
+  credit: Designed & Built by Adil Modan

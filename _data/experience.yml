@@ -1,29 +1,32 @@
 - company: Apple Inc.
-  url: https://www.linkedin.com/company/apple/
-  time: March 2022 - Present
-  position: Software Engineer (Devops)
+  url: https://www.apple.com/
+  time: Mar 2022 — Present
+  position: Platform / DevOps Engineer
+  description: >-
+    Operating 48 Kubernetes clusters supporting 60 microservices.
+    Led observability migration across 16 teams — 92% latency reduction, 63% fewer incidents.
+    Scaled infrastructure for iPhone launches handling 120M+ requests per weekend.
 
 - company: Tata Consultancy Services
-  url: https://www.linkedin.com/company/tcs/
-  time: April 2021 - March 2022
+  url: https://www.tcs.com/
+  time: Apr 2021 — Mar 2022
   position: Software Engineer
+  description: >-
+    Built 15 REST APIs with OAuth 2.0/JWT using Java and Angular.
+    Migrated production databases from Oracle to MySQL, improving query performance by 35%.
 
-- company: PFI Incorporated
-  url: https://www.linkedin.com/company/pfi-inc-/
-  time: March 2017 - April 2021
-  position: Software Engineer
-
-- company: PFI Incorporated
-  url: https://www.linkedin.com/company/pfi-inc-/
-  time: March 2017 - October 2017
-  position: Business Development Intern
-  
 - company: Marin CoWork
   url: https://www.linkedin.com/company/marin-cowork/
-  time: July 2019 - April 2021
-  position: Principal Software Engineer
+  time: Aug 2019 — Apr 2021
+  position: Founder & Principal Engineer
+  description: >-
+    Founded and scaled coworking startup to 6 spaces and 50 long-term tenants, profitable in year one.
+    Built platform processing $27M+ annually by consolidating 5 payment vendors into a unified system.
 
-- company: NextGen Marin
-  url: https://nextgenmarin.com/
-  time: October 2017 - October 2020
-  position: CoFounder
+- company: Professional Financial Investors
+  url: https://www.linkedin.com/company/pfi-inc-/
+  time: Mar 2017 — Apr 2021
+  position: Software Engineer
+  description: >-
+    Built CRM and vendor systems integrating multiple payment APIs.
+    Led 5 interns analyzing 40+ markets, producing 30+ investment reports.

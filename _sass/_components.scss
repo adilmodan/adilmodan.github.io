@@ -1,0 +1,67 @@
+// Buttons
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: 0.75em 1.75em;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-base) var(--ease);
+  letter-spacing: 0.01em;
+
+  &--primary {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--outline {
+    border: 1.5px solid var(--color-border);
+    color: var(--color-text);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: translateY(-1px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+// Tags
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 0.25em 0.6em;
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+// Inline links (within prose)
+
+.about__text a,
+.experience__company a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--duration-fast) var(--ease);
+
+  &:hover {
+    text-decoration-color: var(--color-accent);
+  }
+}

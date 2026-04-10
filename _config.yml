@@ -1,40 +1,41 @@
-# Site settings
 name: Adil Modan
-title: Adil Modan | DevOps Engineer
-description: Software and electrical engineer focused on introducing modern technologies into the financial industry. 
-url: https://adilmodan.github.io/
-baseurl: ''
-email: adilmodan@gmail.com
-cover: https://adilmodan.github.io/img/og.png
-logo:  https://adilmodan.github.io/img/logo/am.png
-resume: https://adilmodan.github.io/resume.pdf
-social:
-  - title: email
-    url: mailto:adilmodan@gmail.com
-  - title: instagram
-    url: https://instagram.com/adillions
-  - title: github
-    url: https://github.com/adilmodan
-  - title: linkedin
-    url: https://www.linkedin.com/in/adilmodan
+title: Adil Modan | Platform Engineer
+description: >-
+  Platform Engineer operating large-scale Kubernetes infrastructure at Apple.
+  Building reliable systems for 60+ microservices across 48 clusters.
+url: https://adilmodan.com
+baseurl: ""
+cover: /img/og.png
+logo: /img/logo/am.png
+resume: /resume.pdf
 
-# Build settings
+social:
+  - name: GitHub
+    url: https://github.com/adilmodan
+    icon: github
+  - name: LinkedIn
+    url: https://linkedin.com/in/adilmodan
+    icon: linkedin
+  - name: Email
+    url: mailto:adilmodan@gmail.com
+    icon: email
+
 markdown: kramdown
 
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+
 exclude:
-  - 'Gemfile'
-  - 'Gemfile.lock'
-  - '*.gemspec'
-  - 'README.md'
-  - 'node_modules'
-  - 'build'
-  - 'gulpfile.js'
-  - 'package.json'
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - LICENSE
 
 keep_files:
-  - '.git'
-  - '.gitignore'
-
-plugins_dir:
-  - jekyll-minifier
-  - jekyll-sitemap
+  - .git
+  - .gitignore

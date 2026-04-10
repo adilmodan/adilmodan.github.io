@@ -1,4 +1,27 @@
-.idea
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# OS files
 .DS_Store
-_site
-node_modules
+Thumbs.db
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node (legacy, should not be needed)
+node_modules/
+
+# Claude Code / AI agent files
+.claude/
+
+# Secrets and credentials
+*.env
+.env.*
+credentials*
