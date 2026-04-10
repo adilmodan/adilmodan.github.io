@@ -140,15 +140,64 @@ layout: default
 
   <!-- ===== ABOUT ===== -->
   <div class="tab-panel" id="tab-about">
-    <section class="about-full">
-      <div class="about-full__left">
+    <section class="about-grid">
+
+      <!-- LEFT: Main about card -->
+      <div class="card about-card span-2r">
+        <h2 class="about-card__heading">What I'm about.</h2>
         {% for i in (0..3) %}
-        <div class="about-full__block">
-          <span class="about-full__label">{{ site.data.site.about_labels[i] }}</span>
-          <p>{{ site.data.site.about[i] }}</p>
+        <div class="about-card__section">
+          <span class="about-card__label">{{ site.data.site.about_labels[i] }}</span>
+          <p class="about-card__text">{{ site.data.site.about[i] }}</p>
         </div>
         {% endfor %}
       </div>
+
+      <!-- RIGHT: Personality cards -->
+      <div class="card about-side-card about-side-card--interests">
+        <span class="card__label">Interests</span>
+        <ul class="interests-list">
+          {% for interest in site.data.site.interests %}
+          <li class="interests-list__item">
+            <span class="interests-dot"></span>{{ interest }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="card about-side-card about-side-card--reading">
+        <span class="card__label">On my shelf</span>
+        {% for book in site.data.site.reading %}
+        <div class="book-item">
+          <div class="book-item__cover">
+            <i class="lucide-book-open"></i>
+          </div>
+          <div>
+            <span class="book-item__title">{{ book.title }}</span>
+            <span class="book-item__author">{{ book.author }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="card about-side-card about-side-card--location">
+        <div class="location-photo">
+          <div class="location-photo__gradient"></div>
+          <div class="location-photo__content">
+            <div class="location__dot"></div>
+            <span class="location__name" style="color:#fff;">Bay Area, CA</span>
+            <span class="location__coords" style="color:rgba(255,255,255,0.7);">37.77&deg; N, 122.42&deg; W</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card about-side-card about-side-card--quote">
+        <blockquote class="pull-quote">
+          <p>&ldquo;Less, but better.&rdquo;</p>
+          <cite>&#8212; Dieter Rams</cite>
+        </blockquote>
+      </div>
+
     </section>
   </div>
 
@@ -186,25 +235,72 @@ layout: default
   <!-- ===== CONTACT ===== -->
   <div class="tab-panel" id="tab-contact">
     <section class="contact">
-      <div class="contact__bubble">
-        <div class="contact__avatar">AM</div>
-        <div class="contact__message">
-          <span class="contact__sender">Adil</span>
-          <p>Want to work together or just say hello? Reach out anytime.</p>
+
+      <!-- iMessage conversation -->
+      <div class="imessage">
+        <div class="imessage__bubble imessage__bubble--received">
+          <div class="imessage__avatar">AM</div>
+          <div class="imessage__content">
+            <span class="imessage__sender">Adil</span>
+            <p>want to work together or just say hello? send me a message — i actually reply.</p>
+          </div>
+        </div>
+        <div class="imessage__bubble imessage__bubble--sent">
+          <div class="imessage__content">
+            <p>sounds good</p>
+          </div>
+        </div>
+        <div class="imessage__actions">
+          <a href="mailto:adilmodan@gmail.com" class="imessage__icon-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://github.com/adilmodan" target="_blank" rel="noopener" class="imessage__icon-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <div class="imessage__input">
+            <span>iMessage</span>
+            <div class="imessage__send">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="contact__cards">
-        <a href="mailto:adilmodan@gmail.com" class="card card--contact">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span class="card__title">Email Me</span>
-          <span class="card__sublabel">adilmodan@gmail.com</span>
+
+      <!-- Contact cards -->
+      <div class="contact-cards">
+        <!-- Email preview card -->
+        <a href="mailto:adilmodan@gmail.com" class="card contact-preview-card">
+          <div class="contact-preview__header">
+            <div>
+              <span class="contact-preview__name">Adil Modan</span>
+              <span class="contact-preview__handle">adilmodan@gmail.com</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-preview__body">
+            <div class="contact-preview__line"><span class="contact-preview__label">To</span> adilmodan@gmail.com</div>
+            <div class="contact-preview__line contact-preview__line--subject">Let's Chat</div>
+            <div class="contact-preview__line contact-preview__line--body">Say hello</div>
+          </div>
+          <div class="contact-preview__cta">Email Me <span>&nearr;</span></div>
         </a>
-        <a href="https://github.com/adilmodan" target="_blank" rel="noopener" class="card card--contact">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span class="card__title">GitHub</span>
-          <span class="card__sublabel">adilmodan</span>
+
+        <!-- GitHub profile card -->
+        <a href="https://github.com/adilmodan" target="_blank" rel="noopener" class="card contact-preview-card">
+          <div class="contact-preview__header">
+            <div>
+              <span class="contact-preview__name">adilmodan</span>
+              <span class="contact-preview__handle">github.com/adilmodan</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#24292e"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div class="contact-preview__bio">
+            Platform Engineer building infrastructure at scale and tools for Islamic finance.
+          </div>
+          <div class="contact-preview__cta">View Profile <span>&nearr;</span></div>
         </a>
       </div>
+
     </section>
   </div>
 

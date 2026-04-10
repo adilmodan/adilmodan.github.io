@@ -88,5 +88,17 @@ tijara_screening:
     status: fail
     label: Non-compliant
 
+interests:
+  - Hybrid athlete training
+  - Markets & investing
+  - Islamic finance
+  - Infrastructure at scale
+
+reading:
+  - title: "The Intelligent Investor"
+    author: "Benjamin Graham"
+  - title: "Designing Data-Intensive Applications"
+    author: "Martin Kleppmann"
+
 footer:
   credit: Adil Modan
