@@ -37,8 +37,8 @@
   overflow: hidden;
   position: relative;
 
-  // Clickable cards
-  a& {
+  // Clickable cards (anchor tags)
+  &[href] {
     cursor: pointer;
 
     &:hover {
