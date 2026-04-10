@@ -1,23 +1,36 @@
-// Intro entrance — staggered fade
+// Scroll-triggered fade in
 
-@keyframes fadeIn {
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Page header entrance — immediate, staggered
+
+.page-header__name,
+.page-header__bio,
+.page-header__nav {
+  opacity: 0;
+  animation: enter 0.5s ease forwards;
+}
+
+.page-header__name { animation-delay: 0s; }
+.page-header__bio  { animation-delay: 0.08s; }
+.page-header__nav  { animation-delay: 0.16s; }
+
+@keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-.intro__name,
-.intro__bio,
-.intro__links {
-  opacity: 0;
-  animation: fadeIn 0.5s var(--ease) forwards;
-}
-
-.intro__name   { animation-delay: 0s; }
-.intro__bio    { animation-delay: 0.12s; }
-.intro__links  { animation-delay: 0.24s; }

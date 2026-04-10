@@ -1,7 +1,6 @@
 (() => {
   // Theme toggle
   const toggle = document.querySelector('[data-theme-toggle]');
-
   if (toggle) {
     toggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
@@ -11,17 +10,20 @@
     });
   }
 
-  // Nav scroll state
-  const nav = document.querySelector('.nav');
-  const intro = document.querySelector('.intro');
+  // Scroll-triggered fade in
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
 
-  if (nav && intro) {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        nav.classList.toggle('nav--scrolled', !entry.isIntersecting);
-      },
-      { threshold: 0 }
-    );
-    observer.observe(intro);
-  }
+  document.querySelectorAll('.fade-in').forEach((el) => {
+    observer.observe(el);
+  });
 })();

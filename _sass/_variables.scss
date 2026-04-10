@@ -1,72 +1,58 @@
 // =============================================
-// Design Tokens — "Structural" Design System
+// Design Tokens
 // =============================================
 
 :root {
-  // Typography families
-  --font-display: 'Libre Baskerville', Georgia, serif;
-  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  // Typography
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Libre Baskerville', Georgia, serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  // Fluid type scale
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);
-  --text-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.9rem);
-  --text-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
-  --text-lg: clamp(1.05rem, 0.95rem + 0.5vw, 1.2rem);
-  --text-xl: clamp(1.2rem, 1.05rem + 0.75vw, 1.4rem);
-  --text-2xl: clamp(1.4rem, 1.1rem + 1.5vw, 1.85rem);
-  --text-3xl: clamp(1.75rem, 1.3rem + 2.25vw, 2.5rem);
-  --text-hero: clamp(2.5rem, 1.5rem + 5vw, 4.5rem);
+  // Type scale
+  --text-xs: 0.8rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
 
-  // Spacing scale
-  --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
-  --space-sm: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
-  --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
-  --space-lg: clamp(1.5rem, 1rem + 2.5vw, 3rem);
-  --space-xl: clamp(3rem, 2rem + 5vw, 6rem);
-  --space-2xl: clamp(5rem, 3rem + 8vw, 10rem);
+  // Spacing
+  --space-xs: 0.375rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
 
   // Layout
-  --max-width: 1100px;
-  --nav-height: 64px;
+  --page-width: 640px;
+  --page-padding: 1.5rem;
 
   // Transitions
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
-  --duration-slow: 500ms;
-  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-
-  // Radius
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --duration: 200ms;
+  --ease: ease;
 
   // Light theme (default)
-  --color-bg: #FAFAF8;
-  --color-bg-elevated: #FFFFFF;
+  --color-bg: #FFFFFF;
   --color-text: #1A1A1A;
-  --color-text-secondary: #6B6B6B;
-  --color-accent: #B85C38;
-  --color-accent-hover: #9A4A2E;
-  --color-accent-subtle: rgba(184, 92, 56, 0.07);
-  --color-border: #E5E5E0;
-  --color-surface: #F0F0EC;
-  --color-section-label: #ADADAD;
-
-  // Noise overlay opacity
-  --noise-opacity: 0.025;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-accent: #1A1A1A;
+  --color-link: #4A6FA5;
+  --color-border: #E8E8E8;
+  --color-surface: #F7F7F7;
+  --color-tag-bg: #F0F0F0;
+  --color-tag-text: #555555;
 }
 
 [data-theme="dark"] {
-  --color-bg: #111110;
-  --color-bg-elevated: #1A1A18;
-  --color-text: #EDEDEB;
-  --color-text-secondary: #999996;
-  --color-accent: #D4956A;
-  --color-accent-hover: #E0A87E;
-  --color-accent-subtle: rgba(212, 149, 106, 0.1);
-  --color-border: #2A2A28;
-  --color-surface: #161614;
-  --color-section-label: #555553;
-  --noise-opacity: 0.02;
+  --color-bg: #161616;
+  --color-text: #E8E8E8;
+  --color-text-secondary: #A0A0A0;
+  --color-text-tertiary: #666666;
+  --color-accent: #E8E8E8;
+  --color-link: #7EB0D5;
+  --color-border: #2A2A2A;
+  --color-surface: #1E1E1E;
+  --color-tag-bg: #252525;
+  --color-tag-text: #A0A0A0;
 }

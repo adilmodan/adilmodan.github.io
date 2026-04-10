@@ -1,30 +1,38 @@
-hero:
-  greeting: "Hi, I'm"
-  name: Adil Modan
-  title: Engineer & Builder
-  subtitle: >-
-    I build things — from large-scale infrastructure platforms to
-    Islamic finance tools to this website. Based in the Bay Area.
+bio: >-
+  Engineer and builder in the Bay Area. I work on infrastructure
+  at scale and build tools on the side — mostly at the intersection
+  of engineering, finance, and faith.
 
 about:
-  paragraphs:
-    - >-
-      I'm an engineer who likes building systems that work at scale and
-      tools that solve real problems. By day, I work on platform
-      infrastructure — Kubernetes, observability, CI/CD — the stuff that
-      keeps services running when millions of people show up at once.
-    - >-
-      On the side, I'm building <a href="https://tijara-five.vercel.app"
-      target="_blank" rel="noopener">Tijara</a>, a Shari'ah-compliant
-      stock screening engine rooted in Islamic finance principles. More
-      projects are on the way.
-    - >-
-      Before engineering, I founded <strong>Marin CoWork</strong> — a
-      coworking startup I built from zero to profitable, writing the
-      software that powered everything from CRM to payments.
-    - >-
-      When I'm not building, I'm probably training (chasing a 6-minute
-      mile), at the mosque, or reading about markets.
+  - >-
+    Right now I'm a Platform Engineer working on large-scale Kubernetes
+    infrastructure — the kind of systems that need to stay up when
+    millions of people show up at once. Observability, CI/CD, cloud
+    architecture, that sort of thing.
+  - >-
+    I'm also building
+    <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>,
+    a Shari'ah-compliant stock screening engine. It validates equities
+    against Islamic finance principles through a multi-stage pipeline.
+    More projects coming.
+  - >-
+    Before all this, I founded <strong>Marin CoWork</strong> — a
+    coworking startup I took from zero to profitable. I wrote all the
+    software: CRM, payments ($27M+ annually across 5 vendors), analytics.
+  - >-
+    When I'm not building, I'm training (chasing a 6-minute mile and
+    10% body fat), at the mosque, or reading about markets.
+
+now:
+  - Building Tijara — Shari'ah stock screening engine
+  - Working on platform infrastructure at scale
+  - Training as a hybrid athlete
+  - Exploring Islamic finance and quantitative investing
+
+colophon: >-
+  Built with Jekyll and hosted on GitHub Pages. Set in Instrument Sans
+  and Libre Baskerville. No frameworks, no dependencies — just HTML,
+  CSS, and a few lines of vanilla JavaScript.
 
 footer:
-  credit: Designed & Built by Adil Modan
+  credit: Adil Modan

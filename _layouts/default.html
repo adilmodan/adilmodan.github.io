@@ -4,11 +4,18 @@
   {% include head.html %}
 </head>
 <body>
-  {% include nav.html %}
-  <main>
-    {{ content }}
-  </main>
-  {% include footer.html %}
+  {{ content }}
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__links">
+        {% for link in site.social %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.name }}</a>
+        {% endfor %}
+        <a href="{{ site.resume }}" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <span class="footer__credit">{{ site.data.site.footer.credit }}</span>
+    </div>
+  </footer>
   {% include scripts.html %}
 </body>
 </html>

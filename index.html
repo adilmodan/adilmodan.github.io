@@ -2,8 +2,103 @@
 layout: default
 ---
 
-{% include hero.html %}
-{% include about.html %}
-{% include projects.html %}
-{% include experience.html %}
-{% include skills.html %}
+<div class="page">
+
+  <header class="page-header">
+    <div class="page-header__top">
+      <h1 class="page-header__name">Adil Modan</h1>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+    <p class="page-header__bio">{{ site.data.site.bio }}</p>
+    <nav class="page-header__nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#now">Now</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </header>
+
+  <hr class="divider">
+
+  <section class="section fade-in" id="about">
+    <h2 class="section__title">About</h2>
+    <div class="prose">
+      {% for paragraph in site.data.site.about %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section fade-in" id="projects">
+    <h2 class="section__title">Projects</h2>
+    <div class="projects">
+      {% for project in site.data.projects %}
+      <article class="project{% if project.status == 'coming_soon' %} project--soon{% endif %}">
+        <div class="project__top">
+          <h3 class="project__name">
+            {% if project.url %}
+            <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }} &nearr;</a>
+            {% else %}
+            {{ project.name }}
+            {% endif %}
+          </h3>
+          {% if project.github %}
+          <a href="{{ project.github }}" target="_blank" rel="noopener" class="project__source">Source</a>
+          {% endif %}
+        </div>
+        <p class="project__desc">{{ project.description }}</p>
+        {% if project.tech.size > 0 %}
+        <div class="project__stack">
+          {% for tech in project.tech %}
+          <span class="tag">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section fade-in" id="now">
+    <h2 class="section__title">Now</h2>
+    <ul class="now-list">
+      {% for item in site.data.site.now %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section fade-in" id="experience">
+    <h2 class="section__title">Experience</h2>
+    <div class="jobs">
+      {% for job in site.data.experience %}
+      <div class="job">
+        <div class="job__top">
+          <span class="job__role">{{ job.position }}<span class="job__at"> at </span><a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.company }}</a></span>
+          <span class="job__time">{{ job.time }}</span>
+        </div>
+        {% if job.description %}
+        <p class="job__desc">{{ job.description }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section fade-in" id="colophon">
+    <h2 class="section__title">Colophon</h2>
+    <p class="prose">{{ site.data.site.colophon }}</p>
+  </section>
+
+</div>
