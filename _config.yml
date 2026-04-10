@@ -1,0 +1,39 @@
+name: Adil Modan
+title: Adil Modan
+description: >-
+  Engineer and builder based in the Bay Area. Building infrastructure
+  at scale, tools for Islamic finance, and whatever else is interesting.
+url: https://adilmodan.com
+baseurl: ""
+logo: /img/logo/am.png
+resume: /resume.pdf
+
+social:
+  - name: GitHub
+    url: https://github.com/adilmodan
+  - name: LinkedIn
+    url: https://linkedin.com/in/adilmodan
+  - name: Email
+    url: mailto:adilmodan@gmail.com
+
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - LICENSE
+  - example
+  - Screenshot*
+
+keep_files:
+  - .git
+  - .gitignore

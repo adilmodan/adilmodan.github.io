@@ -1,0 +1,45 @@
+bio: >-
+  Engineer and builder in the Bay Area. I work on infrastructure
+  at scale and build tools on the side.
+
+beliefs:
+  - infrastructure that disappears when it's working.
+  - tools you barely notice until you need them.
+  - side projects that solve real problems.
+  - systems at the intersection of tech and faith.
+  - software for people who'd rather not think about software.
+
+about:
+  - >-
+    I'm a Platform Engineer at <strong>Apple</strong>, working on
+    large-scale Kubernetes infrastructure — the kind of systems that
+    need to stay up when millions of people show up at once.
+  - >-
+    I grew up building things. Before engineering, I founded
+    <strong>Marin CoWork</strong> — a coworking startup I took from
+    zero to profitable. I wrote all the software: CRM, payments
+    ($27M+ annually), analytics. I studied Electrical Engineering
+    at San Francisco State University.
+  - >-
+    On the side, I'm building
+    <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>
+    — a Shari'ah-compliant stock screening engine that validates
+    equities against AAOIFI Islamic finance standards.
+  - >-
+    When I'm not building, I'm training as a hybrid athlete, at the
+    mosque, or reading about markets and investing.
+
+about_labels:
+  - What I do
+  - Where I started
+  - What I'm building
+  - Outside of work
+
+now:
+  - Building Tijara
+  - Platform infrastructure at scale
+  - Training as a hybrid athlete
+  - Exploring Islamic finance
+
+footer:
+  credit: Adil Modan

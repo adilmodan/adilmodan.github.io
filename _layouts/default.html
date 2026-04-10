@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {{ content }}
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__links">
+        {% for link in site.social %}
+        <a href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ link.name }}</a>
+        {% endfor %}
+        <a href="{{ site.resume }}">Resume</a>
+      </div>
+      <span class="footer__credit">{{ site.data.site.footer.credit }}</span>
+    </div>
+  </footer>
+
+  {% include scripts.html %}
+</body>
+</html>
