@@ -1,14 +1,14 @@
 bio: >-
-  Platform Engineer at Apple. Building large-scale Kubernetes
-  infrastructure by day, halal fintech by night.
+  Platform Engineer at Apple. I keep large-scale Kubernetes
+  clusters running — the kind that can't go down.
 
 beliefs:
-  - "i build infrastructure. the invisible kind."
-  - "i think the best systems are the ones nobody notices — until they break."
-  - "i think there's beauty in software that just works. at scale. quietly."
-  - "i also think some communities get overlooked by tech."
-  - "so i'm building tools for them. starting with Islamic finance."
-  - "fewer things. but better things, for more people."
+  - "i build things."
+  - "mostly the kind nobody sees — infrastructure, pipelines, the systems underneath the systems."
+  - "i think the best software stays out of your way."
+  - "i also think some problems don't get built for because the market's too small."
+  - "halal investing is one of those problems."
+  - 'so i''m building <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>.'
 
 about:
   - >-
@@ -20,7 +20,7 @@ about:
     <strong>Marin CoWork</strong> — a coworking startup I took from
     zero to profitable. I wrote all the software: CRM, payments
     ($27M+ annually), analytics. I studied Electrical Engineering
-    at San Francisco State University.
+    at <strong>San Francisco State University</strong>.
   - >-
     On the side, I'm building
     <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>
@@ -36,11 +36,57 @@ about_labels:
   - What I'm building
   - Outside of work
 
+about_icons:
+  - lucide-briefcase
+  - lucide-map-pin
+  - lucide-rocket
+
 now:
-  - Building Tijara
-  - Platform infra at scale
-  - Hybrid athlete training
-  - Exploring Islamic finance
+  - label: Building Tijara
+    color: "#C0392B"
+  - label: Platform infra at scale
+    color: "#2ecc71"
+  - label: Hybrid athlete training
+    color: "#3498db"
+  - label: Exploring Islamic finance
+    color: "#f39c12"
+
+stack:
+  - name: K8s
+    icon: kubernetes
+    color: "326CE5"
+  - name: Docker
+    icon: docker
+    color: "2496ED"
+  - name: Terraform
+    icon: terraform
+    color: "844FBA"
+  - name: Go
+    icon: go
+    color: "00ADD8"
+  - name: Python
+    icon: python
+    color: "3776AB"
+  - name: React
+    icon: react
+    color: "61DAFB"
+  - name: TS
+    icon: typescript
+    color: "3178C6"
+  - name: Linux
+    icon: linux
+    color: "FCC624"
+
+tijara_screening:
+  - ticker: AAPL
+    status: pass
+    label: Compliant
+  - ticker: MSFT
+    status: warn
+    label: Review
+  - ticker: JPM
+    status: fail
+    label: Non-compliant
 
 footer:
   credit: Adil Modan
