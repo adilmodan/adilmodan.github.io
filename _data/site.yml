@@ -37,10 +37,6 @@ about_labels:
   - What I'm building
   - Outside of work
 
-about_icons:
-  - lucide-briefcase
-  - lucide-map-pin
-  - lucide-rocket
 
 now:
   - label: Building Tijara

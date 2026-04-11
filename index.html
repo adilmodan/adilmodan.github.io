@@ -32,9 +32,9 @@ layout: default
         <span class="card__label">About</span>
         <p class="card__text">{{ site.data.site.bio }}</p>
         <div class="about-preview">
-          {% for icon in site.data.site.about_icons %}
-          <div class="about-preview__item"><i class="{{ icon }}"></i> {{ site.data.site.about_labels[forloop.index0] }}</div>
-          {% endfor %}
+          <div class="about-preview__item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> What I do</div>
+          <div class="about-preview__item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Where I started</div>
+          <div class="about-preview__item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> What I'm building</div>
         </div>
         <span class="card__arrow">&rarr;</span>
       </button>
@@ -64,7 +64,7 @@ layout: default
       {% if tijara %}
       <a href="{{ tijara.url }}" target="_blank" rel="noopener" class="card card--accent span-full">
         <span class="card__label">Featured Project</span>
-        <h3 class="card__title" style="font-family:var(--font-serif);font-size:var(--text-xl);font-weight:600;">{{ tijara.name }}</h3>
+        <h3 class="card__title card__title--featured">{{ tijara.name }}</h3>
         <p class="card__text">{{ tijara.description }}</p>
         <div class="tijara-preview">
           {% for s in site.data.site.tijara_screening %}
@@ -113,7 +113,7 @@ layout: default
         <span class="card__label">Stack</span>
         <div class="stack-grid">
           {% for item in site.data.site.stack %}
-          <div class="stack-item"><img src="https://cdn.simpleicons.org/{{ item.icon }}/{{ item.color }}" alt="{{ item.name }}">{{ item.name }}</div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/{{ item.icon }}/{{ item.color }}" alt="{{ item.name }}" loading="lazy">{{ item.name }}</div>
           {% endfor %}
         </div>
       </div>
@@ -170,7 +170,7 @@ layout: default
         {% for book in site.data.site.reading %}
         <div class="book-item">
           <div class="book-item__cover">
-            <i class="lucide-book-open"></i>
+            <i class="book-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></i>
           </div>
           <div>
             <span class="book-item__title">{{ book.title }}</span>
@@ -208,7 +208,7 @@ layout: default
       {% if project.status == 'live' %}
       <a href="{{ project.url }}" target="_blank" rel="noopener" class="card card--accent span-full">
         <span class="card__label">Featured Project</span>
-        <h3 class="card__title" style="font-family:var(--font-serif);font-size:var(--text-xl);font-weight:600;">{{ project.name }}</h3>
+        <h3 class="card__title card__title--featured">{{ project.name }}</h3>
         <p class="card__text">{{ project.long_description | default: project.description }}</p>
         <div class="tijara-preview">
           {% for s in site.data.site.tijara_screening %}
@@ -220,7 +220,7 @@ layout: default
           <span class="tag">{{ t }}</span>
           {% endfor %}
         </div>
-        <span class="card__arrow" style="color:rgba(255,255,255,0.5)">&rarr;</span>
+        <span class="card__arrow card__arrow--light">&rarr;</span>
       </a>
       {% elsif project.status == 'coming_soon' %}
       <div class="card card--soon">

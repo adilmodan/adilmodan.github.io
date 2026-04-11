@@ -36,7 +36,8 @@
   --color-terminal: #1E1E2E;
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
   --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-hover: 0 12px 40px rgba(0,0,0,0.1);
+  --shadow-hover: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-active: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 // Reset
@@ -66,12 +67,20 @@ img, svg { display: block; max-width: 100%; }
   @media (min-width: 1024px) { padding: var(--space-lg) var(--space-xl) 6rem; }
 }
 
-// Tab panels
-.tab-panel { display: none; }
-.tab-panel--active { display: block; animation: fadeUp 0.4s var(--ease); }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+// Tab panels — smooth crossfade + slide transitions
+.tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(16px);
+
+  &--active {
+    display: block;
+    animation: tabIn 0.5s var(--ease) forwards;
+  }
+}
+@keyframes tabIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 // Nav
@@ -97,6 +106,8 @@ img, svg { display: block; max-width: 100%; }
     -webkit-backdrop-filter: blur(16px);
     background: rgba(255,255,255,0.8);
     box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+    padding: 0.25rem;
+    gap: 0.15rem;
   }
 }
 
@@ -114,6 +125,11 @@ img, svg { display: block; max-width: 100%; }
     background: var(--color-text);
     color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 700px) {
+    font-size: 0.8125rem;
+    padding: 0.45rem 0.9rem;
   }
 }
 
@@ -156,18 +172,22 @@ img, svg { display: block; max-width: 100%; }
   border: 1px solid rgba(0,0,0,0.04);
   overflow: hidden;
   position: relative;
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 
   &[href], &[data-tab-link] {
     cursor: pointer;
     text-align: left;
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px) rotate(0.3deg);
       box-shadow: var(--shadow-hover);
     }
 
-    &:active { transform: translateY(-2px); }
+    &:active {
+      transform: translateY(-2px) scale(0.99);
+      box-shadow: var(--shadow-active);
+      transition-duration: 0.1s;
+    }
   }
 }
 
@@ -194,6 +214,11 @@ img, svg { display: block; max-width: 100%; }
   font-size: var(--text-lg);
   font-weight: 600;
   margin-bottom: var(--space-xs);
+
+  &--featured {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+  }
 }
 
 .card__text {
@@ -214,6 +239,7 @@ img, svg { display: block; max-width: 100%; }
   color: var(--color-faint);
   transition: transform 0.3s var(--ease), color 0.3s var(--ease);
 
+  &--light { color: rgba(255,255,255,0.5); }
   .card:hover & { transform: translateX(6px); color: var(--color-accent); }
 }
 
@@ -497,8 +523,9 @@ img, svg { display: block; max-width: 100%; }
   gap: var(--space-xs);
   min-height: 130px;
 
-  svg, i { transition: transform 0.3s var(--ease); }
-  &:hover svg, &:hover i { transform: scale(1.15); }
+  svg, i { transition: transform 0.4s var(--ease); }
+  &:hover svg, &:hover i { transform: scale(1.2) rotate(-3deg); }
+  &:active svg, &:active i { transform: scale(1.05); }
 }
 
 .card--github { color: #24292e; }
@@ -646,7 +673,7 @@ img, svg { display: block; max-width: 100%; }
   justify-content: center;
   flex-shrink: 0;
 
-  i { font-size: 1rem; color: var(--color-accent); }
+  svg { color: var(--color-accent); }
 }
 
 .book-item__title {
@@ -1007,27 +1034,270 @@ img, svg { display: block; max-width: 100%; }
   }
 }
 
-// Stagger entrance animations
+// ======================
+// Mobile Optimizations
+// ======================
+
+// Tablet adjustments
+@media (max-width: 800px) {
+  :root {
+    --text-2xl: 1.625rem;
+    --text-xl: 1.25rem;
+    --text-lg: 1.0625rem;
+    --space-lg: 1.75rem;
+    --space-xl: 2.5rem;
+    --radius: 16px;
+    --gap: 12px;
+  }
+
+  .hero__beliefs li + li { margin-top: var(--space-sm); }
+}
+
+// Mobile breakpoint
+@media (max-width: 600px) {
+  :root {
+    --text-2xl: 1.5rem;
+    --text-xl: 1.125rem;
+    --text-lg: 1rem;
+    --text-base: 0.9375rem;
+    --space-lg: 1.25rem;
+    --space-xl: 2rem;
+    --radius: 14px;
+    --gap: 10px;
+  }
+
+  .site {
+    padding: var(--space-md) var(--space-sm) 6rem;
+  }
+
+  // Cards: tighter padding on mobile
+  .card {
+    padding: var(--space-sm);
+  }
+
+  .card--hero {
+    padding: var(--space-md);
+  }
+
+  // Hero: tighter spacing
+  .hero__name {
+    font-size: 1.375rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__divider {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__beliefs li {
+    font-size: var(--text-sm);
+    line-height: 1.65;
+
+    & + li { margin-top: var(--space-sm); }
+  }
+
+  .hero__footnote {
+    padding-top: var(--space-md);
+  }
+
+  // Stack grid: 4 cols still works but tighter
+  .stack-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .stack-item {
+    padding: 0.5rem 0.15rem;
+    font-size: 0.625rem;
+
+    img { width: 20px; height: 20px; }
+  }
+
+  // Terminal: allow horizontal scroll on very small screens
+  .card--terminal {
+    padding: var(--space-sm);
+  }
+
+  .terminal__line {
+    font-size: 0.6875rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  // Tijara pills: scroll horizontally
+  .tijara-preview {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  // Now list: compact
+  .now-list { gap: 0.35rem; }
+  .now-item { font-size: var(--text-xs); padding: 0.3rem 0; }
+
+  // About preview items: stack tighter
+  .about-preview { gap: var(--space-xs); }
+  .about-preview__item {
+    padding: 0.4rem 0.6rem;
+    font-size: var(--text-xs);
+  }
+
+  // Icon cards: smaller min-height
+  .card--icon {
+    min-height: 100px;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  // Job card logo
+  .job__logo svg { width: 14px; height: 14px; }
+
+  // About tab: tighter
+  .about-card {
+    padding: var(--space-md);
+  }
+
+  .about-card__heading {
+    font-size: 1.375rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-card__section + .about-card__section {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+  }
+
+  .about-card__text {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+
+  // About side cards: horizontal scroll row on mobile
+  .about-grid {
+    gap: var(--gap);
+    padding: var(--space-sm) 0;
+  }
+
+  // Contact: tighter
+  .contact {
+    padding: var(--space-md) 0;
+  }
+
+  .imessage {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .imessage__content {
+    max-width: 280px;
+
+    p { font-size: var(--text-xs); }
+  }
+
+  .imessage__avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.6rem;
+  }
+
+  .imessage__sender {
+    padding-left: 2.5rem;
+  }
+
+  // Contact cards
+  .contact-preview__body {
+    margin: var(--space-xs) var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  // Disable hover effects on touch (no hover on mobile)
+  .card[href]:hover, .card[data-tab-link]:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+
+  .card--icon:hover svg { transform: none; }
+
+  // Simpler entrance on mobile (less dramatic, faster)
+  .card {
+    transform: translateY(16px) scale(0.98);
+  }
+  .card--hero { transform: translateY(20px) scale(0.96); }
+  .card--accent { transform: translateY(20px) scale(0.95); }
+}
+
+// Small phone
+@media (max-width: 380px) {
+  :root {
+    --text-2xl: 1.25rem;
+    --gap: 8px;
+  }
+
+  .site {
+    padding: var(--space-sm) 0.5rem 5.5rem;
+  }
+
+  .hero__name { font-size: 1.25rem; }
+
+  .pill-nav__item {
+    font-size: var(--text-xs);
+    padding: 0.4rem 0.9rem;
+  }
+
+  .stack-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .imessage__content { max-width: 220px; }
+}
+
+// Stagger entrance animations (Marco-style: scale + translateY + slight rotation)
 .card {
   opacity: 0;
-  animation: cardIn 0.5s var(--ease) forwards;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
-@keyframes cardIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+// Hero card gets a dramatic entrance with rotation
+.card--hero {
+  transform: translateY(32px) scale(0.92) rotate(-1deg);
 }
 
-.card:nth-child(1) { animation-delay: 0s; }
-.card:nth-child(2) { animation-delay: 0.06s; }
-.card:nth-child(3) { animation-delay: 0.12s; }
-.card:nth-child(4) { animation-delay: 0.18s; }
-.card:nth-child(5) { animation-delay: 0.24s; }
-.card:nth-child(6) { animation-delay: 0.3s; }
+// Accent cards scale up more dramatically
+.card--accent {
+  transform: translateY(32px) scale(0.9);
+}
 
-.bento--3col .card:nth-child(1) { animation-delay: 0.1s; }
-.bento--3col .card:nth-child(2) { animation-delay: 0.15s; }
-.bento--3col .card:nth-child(3) { animation-delay: 0.2s; }
-.bento--3col .card:nth-child(4) { animation-delay: 0.25s; }
-.bento--3col .card:nth-child(5) { animation-delay: 0.3s; }
-.bento--3col .card:nth-child(6) { animation-delay: 0.35s; }
+// Scroll-triggered reveal: cards animate in when visible
+.card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
+// Stagger delays for initial load (applied via JS)
+.card.is-visible:nth-child(1) { transition-delay: 0s; }
+.card.is-visible:nth-child(2) { transition-delay: 0.07s; }
+.card.is-visible:nth-child(3) { transition-delay: 0.14s; }
+.card.is-visible:nth-child(4) { transition-delay: 0.21s; }
+.card.is-visible:nth-child(5) { transition-delay: 0.28s; }
+.card.is-visible:nth-child(6) { transition-delay: 0.35s; }
+
+.bento--3col .card.is-visible:nth-child(1) { transition-delay: 0.05s; }
+.bento--3col .card.is-visible:nth-child(2) { transition-delay: 0.1s; }
+.bento--3col .card.is-visible:nth-child(3) { transition-delay: 0.15s; }
+.bento--3col .card.is-visible:nth-child(4) { transition-delay: 0.2s; }
+.bento--3col .card.is-visible:nth-child(5) { transition-delay: 0.25s; }
+.bento--3col .card.is-visible:nth-child(6) { transition-delay: 0.3s; }
+
+// Respect reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
