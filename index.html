@@ -28,7 +28,7 @@ layout: default
       </div>
 
       <!-- ABOUT PREVIEW -->
-      <button class="card" data-tab-link="about" onclick="switchTab('about')">
+      <button class="card card--blue" data-tab-link="about" onclick="switchTab('about')">
         <span class="card__label">About</span>
         <p class="card__text">{{ site.data.site.bio }}</p>
         <div class="about-preview">
@@ -52,7 +52,7 @@ layout: default
           </ul>
         </div>
 
-        <div class="card card--location">
+        <div class="card card--location card--yellow">
           <div class="location__dot"></div>
           <span class="location__name">Bay Area, CA</span>
           <span class="location__coords">37.77&deg; N, 122.42&deg; W</span>
@@ -145,7 +145,7 @@ layout: default
       </a>
 
       <!-- RESUME -->
-      <a href="{{ site.resume }}" target="_blank" rel="noopener" class="card card--icon">
+      <a href="{{ site.resume }}" target="_blank" rel="noopener" class="card card--icon card--green">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         <span class="card__sublabel">Resume</span>
       </a>
