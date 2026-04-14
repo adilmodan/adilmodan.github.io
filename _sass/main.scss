@@ -139,7 +139,6 @@ img, svg { display: block; max-width: 100%; }
 .bento {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  align-items: start;
   gap: var(--gap);
 
   @media (max-width: 800px) { grid-template-columns: 1fr 1fr; }
@@ -578,6 +577,7 @@ img, svg { display: block; max-width: 100%; }
   overflow: hidden;
   background: var(--color-warm);
   border-color: transparent;
+  align-self: start;
 
   .card__title { color: #fff; }
   .card__text { color: rgba(255,255,255,0.85); }
