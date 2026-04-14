@@ -34,8 +34,8 @@
   --color-tag-bg: #F3F3F3;
   --color-tag-text: #555;
   --color-terminal: #1E1E2E;
-  --color-warm: #D35400;
-  --color-warm-bg: #D35400;
+  --color-warm: #B7410E;
+  --color-warm-bg: #B7410E;
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
   --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-hover: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
@@ -582,7 +582,7 @@ img, svg { display: block; max-width: 100%; }
   .card__title { color: #fff; }
   .card__text { color: rgba(255,255,255,0.85); }
   .tag { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
-  &:hover { box-shadow: 0 12px 40px rgba(211,84,0,0.3); }
+  &:hover { box-shadow: 0 12px 40px rgba(183,65,14,0.3); }
 }
 
 .project__screenshot {
