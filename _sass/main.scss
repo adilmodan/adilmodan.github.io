@@ -498,15 +498,15 @@ img, svg { display: block; max-width: 100%; }
 
 // Bots Teaser Card (Home tab)
 .card--bots {
-  background: #4285F4;
+  background: #1C1917;
   border-color: transparent;
 
   .card__title { color: #fff; font-size: var(--text-base); }
-  .card__text { color: rgba(255,255,255,0.85); font-size: var(--text-sm); }
-  .card__arrow { color: rgba(255,255,255,0.5); }
+  .card__text { color: rgba(255,255,255,0.7); font-size: var(--text-sm); }
+  .card__arrow { color: rgba(255,255,255,0.4); }
 
   &:hover {
-    box-shadow: 0 12px 40px rgba(66,133,244,0.3);
+    box-shadow: 0 12px 40px rgba(28,25,23,0.4);
     .card__arrow { transform: translateX(6px); color: #fff; }
   }
 }
@@ -522,7 +522,7 @@ img, svg { display: block; max-width: 100%; }
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   color: #fff;
   display: flex;
   align-items: center;
@@ -571,18 +571,49 @@ img, svg { display: block; max-width: 100%; }
 .card--github { color: #24292e; }
 .card--linkedin { color: #0A66C2; }
 
+// Google color card variants
+.card--blue {
+  background: #4285F4;
+  border-color: transparent;
+
+  .card__label { color: rgba(255,255,255,0.6); }
+  .card__text { color: rgba(255,255,255,0.85); }
+  .card__arrow { color: rgba(255,255,255,0.5); }
+  .about-preview__item { background: rgba(255,255,255,0.15); color: #fff; }
+  &:hover .about-preview__item { background: rgba(255,255,255,0.22); }
+  &:hover { box-shadow: 0 12px 40px rgba(66,133,244,0.3); }
+}
+
+.card--yellow {
+  background: #FBBC04;
+  border-color: transparent;
+
+  .location__name { color: #1C1917; }
+  .location__coords { color: rgba(28,25,23,0.6); }
+  .location__dot { background: #1C1917; box-shadow: 0 0 0 4px rgba(28,25,23,0.15), 0 0 0 8px rgba(28,25,23,0.07); }
+}
+
+.card--green {
+  background: #34A853;
+  border-color: transparent;
+  color: #fff;
+
+  .card__sublabel { color: rgba(255,255,255,0.85); }
+  &:hover { box-shadow: 0 12px 40px rgba(52,168,83,0.3); }
+}
+
 // Project Card (with screenshot)
 .card--project {
   padding: 0;
   overflow: hidden;
-  background: var(--color-warm);
+  background: var(--color-accent);
   border-color: transparent;
   align-self: start;
 
   .card__title { color: #fff; }
   .card__text { color: rgba(255,255,255,0.85); }
   .tag { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
-  &:hover { box-shadow: 0 12px 40px rgba(183,65,14,0.3); }
+  &:hover { box-shadow: 0 12px 40px rgba(192,57,43,0.3); }
 }
 
 .project__screenshot {
