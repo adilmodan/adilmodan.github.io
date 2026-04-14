@@ -59,7 +59,7 @@ stack:
     icon: terraform
     color: "844FBA"
   - name: AWS
-    icon: amazonaws
+    icon: amazoneks
     color: "FF9900"
   - name: Python
     icon: python
