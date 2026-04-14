@@ -575,12 +575,12 @@ img, svg { display: block; max-width: 100%; }
 .card--project {
   padding: 0;
   overflow: hidden;
-  background: var(--color-warm-bg);
+  background: var(--color-warm);
   border-color: transparent;
 
   .card__title { color: #fff; }
-  .card__text { color: rgba(255,255,255,0.65); }
-  .tag { background: rgba(245,158,11,0.15); color: var(--color-warm); border: 1px solid rgba(245,158,11,0.2); }
+  .card__text { color: rgba(255,255,255,0.85); }
+  .tag { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
 }
 
 .project__screenshot {
@@ -589,9 +589,7 @@ img, svg { display: block; max-width: 100%; }
 
   img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: top;
+    height: auto;
     display: block;
     transition: transform 0.6s var(--ease);
   }
@@ -616,8 +614,8 @@ img, svg { display: block; max-width: 100%; }
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 0.3em 0.7em;
-  background: rgba(245,158,11,0.15);
-  color: var(--color-warm);
+  background: rgba(255,255,255,0.2);
+  color: #fff;
   border-radius: 6px;
   width: fit-content;
 }
@@ -1267,10 +1265,6 @@ img, svg { display: block; max-width: 100%; }
   }
 
   // Project cards
-  .project__screenshot img {
-    height: 180px;
-  }
-
   .project__body {
     padding: var(--space-sm);
   }
