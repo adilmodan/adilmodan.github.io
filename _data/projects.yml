@@ -20,10 +20,59 @@
   featured: true
   status: live
 
-- name: Coming Soon
+- name: Trading Bot v1
   description: >-
-    More projects in the works — tools at the intersection of
-    infrastructure, finance, and faith.
-  tech: []
+    Autonomous equity allocation system using Gaussian Hidden Markov Models
+    to detect market volatility regimes and dynamically adjust portfolio exposure.
+  long_description: >-
+    A mathematically-driven trading system that uses Gaussian HMMs to classify
+    markets into volatility regimes — from crash to euphoria — and dynamically
+    adjust portfolio allocation. Exhaustive walk-forward backtesting with
+    Monte Carlo stress testing ensures zero look-ahead bias. Five independent
+    circuit breakers manage risk. Trades 8 large-cap equities on 5-minute bars
+    via Alpaca.
+  image: /assets/images/trader-bot-v1.png
+  approach: Mathematical Analysis
+  approach_detail: Gaussian HMM + Walk-Forward Backtesting
+  tech:
+    - Python
+    - hmmlearn
+    - Alpaca API
+    - Streamlit
+    - pandas
+    - scikit-learn
+  highlights:
+    - 14-feature HMM pipeline with BIC model selection
+    - Walk-forward backtesting with Monte Carlo stress testing
+    - 5 independent circuit breakers for risk management
+    - Real-time Streamlit dashboard with equity curves
   featured: false
-  status: coming_soon
+  status: live
+
+- name: Trading Bot v2
+  description: >-
+    AI-first trading system where every component — from research to strategy
+    optimization to execution — is driven by artificial intelligence.
+  long_description: >-
+    An AI-first approach to algorithmic trading. AI agents handle market research,
+    strategy generation, and continuous optimization. The system runs autonomous
+    research cycles, backtests strategies, and rebalances across multiple
+    timeframes — daily, weekly, and monthly. Regime detection with dynamic
+    exposure control. Trades via Alpaca with full paper and live support.
+  image: /assets/images/trader-bot-v2.png
+  approach: AI-First
+  approach_detail: AI-Driven Research + Autonomous Optimization
+  tech:
+    - Python
+    - Claude API
+    - Alpaca API
+    - Plotly
+    - pandas
+    - numpy
+  highlights:
+    - AI-driven research and strategy optimization cycles
+    - Multi-timeframe rebalancing (daily, weekly, monthly)
+    - Regime detection with dynamic exposure control
+    - Dark-themed real-time trading dashboard
+  featured: false
+  status: live

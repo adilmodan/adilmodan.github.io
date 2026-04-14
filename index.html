@@ -204,31 +204,55 @@ layout: default
   <!-- ===== PROJECTS ===== -->
   <div class="tab-panel" id="tab-projects">
     <section class="bento">
-      {% for project in site.data.projects %}
-      {% if project.status == 'live' %}
-      <a href="{{ project.url }}" target="_blank" rel="noopener" class="card card--accent span-full">
+
+      <!-- TIJARA — Featured -->
+      {% assign tijara_project = site.data.projects | where: "featured", true | first %}
+      <a href="{{ tijara_project.url }}" target="_blank" rel="noopener" class="card card--accent span-full">
         <span class="card__label">Featured Project</span>
-        <h3 class="card__title card__title--featured">{{ project.name }}</h3>
-        <p class="card__text">{{ project.long_description | default: project.description }}</p>
+        <h3 class="card__title card__title--featured">{{ tijara_project.name }}</h3>
+        <p class="card__text">{{ tijara_project.long_description | default: tijara_project.description }}</p>
         <div class="tijara-preview">
           {% for s in site.data.site.tijara_screening %}
           <div class="tijara-pill"><span class="tijara-pill__status tijara-pill__status--{{ s.status }}"></span>{{ s.ticker }} &mdash; {{ s.label }}</div>
           {% endfor %}
         </div>
         <div class="card__tags">
-          {% for t in project.tech %}
+          {% for t in tijara_project.tech %}
           <span class="tag">{{ t }}</span>
           {% endfor %}
         </div>
         <span class="card__arrow card__arrow--light">&rarr;</span>
       </a>
-      {% elsif project.status == 'coming_soon' %}
-      <div class="card card--soon">
-        <span class="card__label">Coming Soon</span>
-        <p class="card__text">{{ project.description }}</p>
+
+      <!-- TRADER BOTS -->
+      {% assign bots = site.data.projects | where: "featured", false %}
+      {% for project in bots %}
+      {% if project.image %}
+      <div class="card card--project">
+        <div class="project__screenshot">
+          <img src="{{ project.image }}" alt="{{ project.name }} dashboard" loading="lazy">
+        </div>
+        <div class="project__body">
+          <div class="project__approach">
+            <span class="project__approach-badge">{{ project.approach }}</span>
+          </div>
+          <h3 class="card__title">{{ project.name }}</h3>
+          <p class="card__text">{{ project.long_description | default: project.description }}</p>
+          <ul class="project__highlights">
+            {% for h in project.highlights %}
+            <li>{{ h }}</li>
+            {% endfor %}
+          </ul>
+          <div class="card__tags">
+            {% for t in project.tech %}
+            <span class="tag">{{ t }}</span>
+            {% endfor %}
+          </div>
+        </div>
       </div>
       {% endif %}
       {% endfor %}
+
     </section>
   </div>
 

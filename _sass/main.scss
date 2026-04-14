@@ -531,6 +531,82 @@ img, svg { display: block; max-width: 100%; }
 .card--github { color: #24292e; }
 .card--linkedin { color: #0A66C2; }
 
+// Project Card (with screenshot)
+.card--project {
+  padding: 0;
+  overflow: hidden;
+}
+
+.project__screenshot {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.6s var(--ease);
+  }
+
+  .card--project:hover & img {
+    transform: scale(1.03);
+  }
+}
+
+.project__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.project__approach {
+  margin-bottom: 0.25rem;
+}
+
+.project__approach-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3em 0.7em;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  border-radius: 6px;
+}
+
+.project__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: var(--space-xs);
+
+  li {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      opacity: 0.5;
+    }
+  }
+}
+
 // Coming Soon Card
 .card--soon {
   border: 2px dashed var(--color-border);
@@ -1150,6 +1226,15 @@ img, svg { display: block; max-width: 100%; }
     min-height: 100px;
 
     svg { width: 24px; height: 24px; }
+  }
+
+  // Project cards
+  .project__screenshot img {
+    height: 180px;
+  }
+
+  .project__body {
+    padding: var(--space-sm);
   }
 
   // Job card logo
