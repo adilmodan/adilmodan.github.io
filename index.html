@@ -79,6 +79,20 @@ layout: default
       </a>
       {% endif %}
 
+      <!-- TRADING BOTS TEASER -->
+      <button class="card card--bots span-full" data-tab-link="projects" onclick="switchTab('projects')">
+        <div class="bots-teaser">
+          <div class="bots-teaser__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="bots-teaser__text">
+            <h3 class="card__title">Trading Bots</h3>
+            <p class="card__text">Two autonomous trading systems &mdash; one built on mathematical models, the other AI-first. Both live on Alpaca.</p>
+          </div>
+          <span class="card__arrow">&rarr;</span>
+        </div>
+      </button>
+
     </section>
 
     <!-- BOTTOM ROW -->
@@ -233,16 +247,9 @@ layout: default
           <img src="{{ project.image }}" alt="{{ project.name }} dashboard" loading="lazy">
         </div>
         <div class="project__body">
-          <div class="project__approach">
-            <span class="project__approach-badge">{{ project.approach }}</span>
-          </div>
+          <span class="project__approach-badge">{{ project.approach }}</span>
           <h3 class="card__title">{{ project.name }}</h3>
-          <p class="card__text">{{ project.long_description | default: project.description }}</p>
-          <ul class="project__highlights">
-            {% for h in project.highlights %}
-            <li>{{ h }}</li>
-            {% endfor %}
-          </ul>
+          <p class="card__text">{{ project.description }}</p>
           <div class="card__tags">
             {% for t in project.tech %}
             <span class="tag">{{ t }}</span>

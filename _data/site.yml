@@ -58,21 +58,21 @@ stack:
   - name: Terraform
     icon: terraform
     color: "844FBA"
-  - name: Go
-    icon: go
-    color: "00ADD8"
+  - name: AWS
+    icon: amazonwebservices
+    color: "FF9900"
   - name: Python
     icon: python
     color: "3776AB"
-  - name: React
-    icon: react
-    color: "61DAFB"
-  - name: TS
-    icon: typescript
-    color: "3178C6"
-  - name: Linux
-    icon: linux
-    color: "FCC624"
+  - name: Bash
+    icon: gnubash
+    color: "4EAA25"
+  - name: Claude
+    icon: anthropic
+    color: "191919"
+  - name: Jenkins
+    icon: jenkins
+    color: "D24939"
 
 tijara_screening:
   - ticker: AAPL

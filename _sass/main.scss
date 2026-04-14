@@ -34,6 +34,8 @@
   --color-tag-bg: #F3F3F3;
   --color-tag-text: #555;
   --color-terminal: #1E1E2E;
+  --color-warm: #F59E0B;
+  --color-warm-bg: #1C1917;
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
   --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-hover: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
@@ -494,6 +496,44 @@ img, svg { display: block; max-width: 100%; }
   &--fail { background: #f38ba8; }
 }
 
+// Bots Teaser Card (Home tab)
+.card--bots {
+  background: var(--color-warm-bg);
+  border-color: transparent;
+
+  .card__title { color: #fff; font-size: var(--text-base); }
+  .card__text { color: rgba(255,255,255,0.65); font-size: var(--text-sm); }
+  .card__arrow { color: var(--color-warm); }
+
+  &:hover {
+    box-shadow: 0 12px 40px rgba(28,25,23,0.4);
+    .card__arrow { transform: translateX(6px); }
+  }
+}
+
+.bots-teaser {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.bots-teaser__icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(245,158,11,0.15);
+  color: var(--color-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bots-teaser__text {
+  flex: 1;
+  min-width: 0;
+}
+
 // Job Card
 .card--job {
   gap: var(--space-xs);
@@ -535,12 +575,17 @@ img, svg { display: block; max-width: 100%; }
 .card--project {
   padding: 0;
   overflow: hidden;
+  background: var(--color-warm-bg);
+  border-color: transparent;
+
+  .card__title { color: #fff; }
+  .card__text { color: rgba(255,255,255,0.65); }
+  .tag { background: rgba(245,158,11,0.15); color: var(--color-warm); border: 1px solid rgba(245,158,11,0.2); }
 }
 
 .project__screenshot {
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--color-border);
 
   img {
     width: 100%;
@@ -563,10 +608,6 @@ img, svg { display: block; max-width: 100%; }
   gap: var(--space-xs);
 }
 
-.project__approach {
-  margin-bottom: 0.25rem;
-}
-
 .project__approach-badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -575,36 +616,10 @@ img, svg { display: block; max-width: 100%; }
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 0.3em 0.7em;
-  background: var(--color-accent-soft);
-  color: var(--color-accent);
+  background: rgba(245,158,11,0.15);
+  color: var(--color-warm);
   border-radius: 6px;
-}
-
-.project__highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-top: var(--space-xs);
-
-  li {
-    font-size: var(--text-xs);
-    color: var(--color-muted);
-    line-height: 1.5;
-    padding-left: 1rem;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.5em;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--color-accent);
-      opacity: 0.5;
-    }
-  }
+  width: fit-content;
 }
 
 // Coming Soon Card
@@ -1129,7 +1144,7 @@ img, svg { display: block; max-width: 100%; }
   .hero__beliefs li + li { margin-top: var(--space-sm); }
 }
 
-// Mobile breakpoint
+// Mobile breakpoint — FEED LAYOUT
 @media (max-width: 600px) {
   :root {
     --text-2xl: 1.5rem;
@@ -1146,7 +1161,30 @@ img, svg { display: block; max-width: 100%; }
     padding: var(--space-md) var(--space-sm) 6rem;
   }
 
-  // Cards: tighter padding on mobile
+  // Feed: single column for all grids
+  .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .bento--3col {
+    grid-template-columns: 1fr 1fr;
+
+    // Terminal and stack go full width
+    .card--terminal,
+    .card:has(.stack-grid) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  // Now + Location stay 2-col (they're small)
+  .bento-sub {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .span-full { grid-column: span 1; }
+  .span-2r { grid-row: span 1; }
+
+  // Cards: tighter padding
   .card {
     padding: var(--space-sm);
   }
@@ -1155,7 +1193,7 @@ img, svg { display: block; max-width: 100%; }
     padding: var(--space-md);
   }
 
-  // Hero: tighter spacing
+  // Hero
   .hero__name {
     font-size: 1.375rem;
     margin-bottom: var(--space-md);
@@ -1176,7 +1214,7 @@ img, svg { display: block; max-width: 100%; }
     padding-top: var(--space-md);
   }
 
-  // Stack grid: 4 cols still works but tighter
+  // Stack
   .stack-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 6px;
@@ -1189,7 +1227,7 @@ img, svg { display: block; max-width: 100%; }
     img { width: 20px; height: 20px; }
   }
 
-  // Terminal: allow horizontal scroll on very small screens
+  // Terminal
   .card--terminal {
     padding: var(--space-sm);
   }
@@ -1200,7 +1238,7 @@ img, svg { display: block; max-width: 100%; }
     -webkit-overflow-scrolling: touch;
   }
 
-  // Tijara pills: scroll horizontally
+  // Tijara pills: horizontal scroll
   .tijara-preview {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1210,18 +1248,18 @@ img, svg { display: block; max-width: 100%; }
     &::-webkit-scrollbar { display: none; }
   }
 
-  // Now list: compact
+  // Now list
   .now-list { gap: 0.35rem; }
   .now-item { font-size: var(--text-xs); padding: 0.3rem 0; }
 
-  // About preview items: stack tighter
+  // About preview
   .about-preview { gap: var(--space-xs); }
   .about-preview__item {
     padding: 0.4rem 0.6rem;
     font-size: var(--text-xs);
   }
 
-  // Icon cards: smaller min-height
+  // Icon cards: 2 across (handled by bento--3col 1fr 1fr)
   .card--icon {
     min-height: 100px;
 
@@ -1237,10 +1275,22 @@ img, svg { display: block; max-width: 100%; }
     padding: var(--space-sm);
   }
 
-  // Job card logo
+  // Bots teaser
+  .bots-teaser {
+    gap: var(--space-sm);
+  }
+
+  .bots-teaser__icon {
+    width: 36px;
+    height: 36px;
+
+    svg { width: 16px; height: 16px; }
+  }
+
+  // Job
   .job__logo svg { width: 14px; height: 14px; }
 
-  // About tab: tighter
+  // About tab
   .about-card {
     padding: var(--space-md);
   }
@@ -1260,13 +1310,12 @@ img, svg { display: block; max-width: 100%; }
     line-height: 1.7;
   }
 
-  // About side cards: horizontal scroll row on mobile
   .about-grid {
     gap: var(--gap);
     padding: var(--space-sm) 0;
   }
 
-  // Contact: tighter
+  // Contact
   .contact {
     padding: var(--space-md) 0;
   }
@@ -1292,13 +1341,12 @@ img, svg { display: block; max-width: 100%; }
     padding-left: 2.5rem;
   }
 
-  // Contact cards
   .contact-preview__body {
     margin: var(--space-xs) var(--space-sm);
     padding: var(--space-xs) var(--space-sm);
   }
 
-  // Disable hover effects on touch (no hover on mobile)
+  // Disable hover effects on touch
   .card[href]:hover, .card[data-tab-link]:hover {
     transform: none;
     box-shadow: var(--shadow);
@@ -1306,7 +1354,7 @@ img, svg { display: block; max-width: 100%; }
 
   .card--icon:hover svg { transform: none; }
 
-  // Simpler entrance on mobile (less dramatic, faster)
+  // Simpler entrance on mobile
   .card {
     transform: translateY(16px) scale(0.98);
   }
