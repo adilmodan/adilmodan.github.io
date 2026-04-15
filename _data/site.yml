@@ -55,11 +55,11 @@ stack:
   - name: Docker
     icon: docker
     color: "2496ED"
-  - name: Terraform
-    icon: terraform
-    color: "844FBA"
+  - name: Argo
+    icon: argo
+    color: "EF7B4D"
   - name: AWS
-    icon: amazoneks
+    icon: amazonaws
     color: "FF9900"
   - name: Python
     icon: python

@@ -359,7 +359,7 @@ img, svg { display: block; max-width: 100%; }
 
   &:hover { transform: scale(1.08); background: #e8e8e8; }
 
-  img {
+  img, svg {
     width: 24px;
     height: 24px;
     object-fit: contain;
@@ -368,7 +368,7 @@ img, svg { display: block; max-width: 100%; }
     transition: filter 0.3s, opacity 0.3s;
   }
 
-  &:hover img { filter: grayscale(0%); opacity: 1; }
+  &:hover img, &:hover svg { filter: grayscale(0%); opacity: 1; }
 }
 
 // Terminal Card
