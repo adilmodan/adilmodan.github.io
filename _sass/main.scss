@@ -256,27 +256,27 @@ a.card:hover .card__arrow, button.card:hover .card__arrow { color: currentColor;
 .btn--soon { background: rgba(0, 0, 0, .05); color: var(--muted); cursor: default; }
 .btn--p:hover, .btn--s:hover { transform: translateY(-2px); }
 
-.frame { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); background: #F1EADF; box-shadow: 0 14px 32px rgba(40, 30, 20, .15); transition: transform .5s var(--ease); }
+.frame { position: relative; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); background: #F1EADF; box-shadow: 0 14px 32px rgba(40, 30, 20, .15); transition: transform .5s var(--ease); }
 .frame__bar { display: flex; align-items: center; gap: 7px; padding: 9px 12px; background: #fff; border-bottom: 1px solid var(--hair); }
 .frame__bar i { width: 10px; height: 10px; border-radius: 50%; display: block; }
 .frame__bar .r { background: #ED6A5E; } .frame__bar .y { background: #F4BF4F; } .frame__bar .g { background: #61C554; }
 .frame__url { margin-left: 8px; font: 500 10.5px/1 "JetBrains Mono"; color: var(--muted); background: var(--bg); padding: 5px 10px; border-radius: 6px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .frame__shot { display: block; width: 100%; }
 .shot { aspect-ratio: 16 / 10; width: 100%; display: block; }
-img.shot { object-fit: cover; object-position: top; }
+img.shot { object-fit: cover; object-position: center top; transition: object-position 3.4s var(--ease); }
 
-/* Co-Lease mock screen */
-.m-co { background: #FBF7F2; padding: 16px; font-family: "DM Sans"; color: #1F1B16; }
-.m-co__brand { font-family: "Fraunces"; font-style: italic; font-weight: 600; font-size: 20px; color: #B85042; }
-.m-co__sub { font-size: 11px; color: #8B847A; margin: 4px 0 13px; }
-.m-co__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-.m-co__card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(0, 0, 0, .07); background: #fff; }
-.m-co__img { height: 52px; background: linear-gradient(120deg, #E8B3A8, #C5CFA8); }
-.m-co__img--b { background: linear-gradient(120deg, #C5CFA8, #E8B3A8); }
-.m-co__b { padding: 8px 10px; }
-.m-co__b b { font-size: 12px; display: block; }
-.m-co__b span { font-size: 9.5px; color: #8B847A; }
-.m-co__chip { display: inline-flex; align-items: center; gap: 5px; font: 600 8.5px/1 "JetBrains Mono"; color: #4F7A35; background: rgba(107, 124, 58, .14); padding: 4px 7px; border-radius: 100px; margin-top: 4px; }
+/* clever: the screenshot slowly "scrolls" inside its browser frame on hover — like a live preview */
+.work-card:hover img.shot,
+.work-feat:hover img.shot { object-position: center bottom; }
+
+/* clever: a soft glass-glare sweeps across the screen on hover */
+.frame::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .38) 48%, transparent 64%);
+  transform: translateX(-130%); transition: transform 1s var(--ease);
+}
+.work-card:hover .frame::after,
+.work-feat:hover .frame::after { transform: translateX(130%); }
 
 /* ---------- 16. Contact ---------- */
 .imsg { max-width: 460px; margin: 0 auto; }

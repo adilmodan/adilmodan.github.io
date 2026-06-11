@@ -2,8 +2,7 @@
 # Projects. `main: true` marks the hero/featured project (Co-Lease),
 # which leads both the Home "Selected work" row and the Work tab.
 # accent ∈ {ember, blue, amber, green} → drives the card color.
-# Render: if `screenshot` set, show the image in the device frame;
-#         else if `mock` set, the template renders a CSS mock by id.
+# Render: `screenshot` is shown inside the CSS device frame on the Work tab.
 # ============================================================
 
 - name: Co-Lease
@@ -24,7 +23,7 @@
   url: ""                     # not deployed yet
   github: ""                  # add when the repo is public
   frame_url: co-lease.com
-  mock: co-lease              # CSS mock id (no real screenshot yet)
+  screenshot: /assets/images/co-lease-home-page.png
 
 - name: Tijara
   status: live
@@ -54,4 +53,4 @@
   url: ""
   github: ""                  # add when the repo is public
   frame_url: "trading-bots · dashboard"
-  screenshot: /assets/images/trader-bot-v1.png
+  screenshot: /assets/images/tading-bot-engine-home-page.png

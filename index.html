@@ -183,18 +183,7 @@ layout: default
       </div>
       <div class="frame">
         <div class="frame__bar">{% include frame-bar.html url=main.frame_url %}</div>
-        {% if main.mock == 'co-lease' %}
-        <div class="m-co shot">
-          <div class="m-co__brand">Co-Lease</div>
-          <div class="m-co__sub">can't afford it alone? team up.</div>
-          <div class="m-co__grid">
-            <div class="m-co__card"><div class="m-co__img"></div><div class="m-co__b"><b>$2,400/mo</b><span>Mission &middot; 2bd</span><span class="m-co__chip">&check; group-ok</span></div></div>
-            <div class="m-co__card"><div class="m-co__img m-co__img--b"></div><div class="m-co__b"><b>$3,100/mo</b><span>SoMa &middot; 3bd</span><span class="m-co__chip">&check; verified</span></div></div>
-          </div>
-        </div>
-        {% elsif main.screenshot %}
         <img class="frame__shot shot" src="{{ main.screenshot }}" alt="{{ main.name }}" loading="lazy">
-        {% endif %}
       </div>
     </div>
 
