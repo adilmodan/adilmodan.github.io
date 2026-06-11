@@ -1,89 +1,68 @@
-bio: >-
-  Platform Engineer at Apple. I keep large-scale Kubernetes
-  clusters running — the kind that can't go down.
+# ============================================================
+# All visible site copy lives here. No hardcoded text in templates.
+# ============================================================
 
+# Short bio — used in <meta> and the Home "About" preview card
+bio: >-
+  Platform Engineer at Apple by day. The rest of the time I build products
+  end to end — infrastructure to interface.
+
+# Hero belief lines (lowercase, terse — the voice)
 beliefs:
   - "i build things."
-  - "mostly the kind nobody sees — infrastructure, pipelines, the systems underneath the systems."
-  - "i think the best software stays out of your way."
-  - "i also think some problems don't get built for because the market's too small."
-  - "halal investing is one of those problems."
-  - 'so i''m building <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>.'
+  - "products, mostly — a way to rent a home with friends, a halal stock screener, trading systems that run themselves."
+  - "by day, i keep apple's kubernetes clusters from going down — the kind that can't."
+  - "i think the best software gets out of your way."
+  - "and that the best problems are the ones nobody builds for, because the market looks too small."
 
-about:
-  - >-
-    I'm a Platform Engineer at <strong>Apple</strong>, working on
-    large-scale Kubernetes infrastructure — the kind of systems that
-    need to stay up when millions of people show up at once.
-  - >-
-    I grew up building things. Before engineering, I founded
-    <strong>Marin CoWork</strong> — a coworking startup I took from
-    zero to profitable. I wrote all the software: CRM, payments
-    ($27M+ annually), analytics. I studied Electrical Engineering
-    at <strong>San Francisco State University</strong>.
-  - >-
-    On the side, I'm building
-    <a href="https://tijara-five.vercel.app" target="_blank" rel="noopener">Tijara</a>
-    — a Shari'ah-compliant stock screening engine that validates
-    equities against AAOIFI Islamic finance standards.
-  - >-
-    When I'm not building infrastructure, I'm building AI apps,
-    bots, and skills in my personal AI lab — or at the mosque,
-    or reading about markets and investing.
+hero_footnote: "less, but better."
 
+# About tab — labels + paragraphs are index-aligned
 about_labels:
   - What I do
   - Where I started
-  - What I'm building
+  - What I build
   - Outside of work
 
+about:
+  - >-
+    I'm a Platform Engineer at <strong>Apple</strong>, keeping large-scale
+    Kubernetes infrastructure alive — the kind of systems that have to stay up
+    when millions of people show up at once.
+  - >-
+    I've always built things. I founded <strong>Marin CoWork</strong> and took
+    it from zero to profitable, writing every line of software myself — CRM,
+    payments ($27M+/yr), analytics. Before that, an EE degree at
+    San Francisco State.
+  - >-
+    Products nobody else bothers with. Right now that's <strong>Co-Lease</strong>
+    — a group-first way to rent — alongside Tijara and a pair of self-running
+    trading systems. Markets, housing, and the infrastructure beneath them.
+  - >-
+    Usually in my AI lab building apps, bots, and skills — or at the mosque, or
+    deep in a book about markets.
 
+# Home "Now" list — Co-Lease leads (it's the main project)
 now:
-  - label: Building Tijara
+  - label: Building Co-Lease
+    color: "#B85042"
+  - label: Shipping Tijara
     color: "#C0392B"
   - label: Platform infra at scale
-    color: "#2ecc71"
-  - label: Building AI apps & skills
-    color: "#3498db"
-  - label: Exploring Islamic finance
-    color: "#f39c12"
+    color: "#2ECC71"
+  - label: AI apps, bots & skills
+    color: "#3498DB"
 
+# Stack — rendered via cdn.simpleicons.org/{icon}/{color}; grayscale at rest
 stack:
-  - name: K8s
-    icon: kubernetes
-    color: "326CE5"
-  - name: Docker
-    icon: docker
-    color: "2496ED"
-  - name: Argo
-    icon: argo
-    color: "EF7B4D"
-  - name: AWS
-    icon: amazonaws
-    color: "FF9900"
-  - name: Python
-    icon: python
-    color: "3776AB"
-  - name: Bash
-    icon: gnubash
-    color: "4EAA25"
-  - name: Claude
-    icon: anthropic
-    color: "191919"
-  - name: Jenkins
-    icon: jenkins
-    color: "D24939"
-
-tijara_screening:
-  - ticker: AAPL
-    status: pass
-    label: Compliant
-  - ticker: MSFT
-    status: warn
-    label: Review
-  - ticker: JPM
-    status: fail
-    label: Non-compliant
+  - { name: K8s, icon: kubernetes, color: "326CE5" }
+  - { name: Docker, icon: docker, color: "2496ED" }
+  - { name: Python, icon: python, color: "3776AB" }
+  - { name: TypeScript, icon: typescript, color: "3178C6" }
+  - { name: Next.js, icon: nextdotjs, color: "111111" }
+  - { name: Supabase, icon: supabase, color: "3FCF8E" }
+  - { name: Claude, icon: anthropic, color: "191919" }
+  - { name: AWS, icon: amazonwebservices, color: "FF9900" }
 
 interests:
   - AI apps, bots & skills
@@ -92,10 +71,18 @@ interests:
   - Infrastructure at scale
 
 reading:
-  - title: "The Intelligent Investor"
-    author: "Benjamin Graham"
-  - title: "Designing Data-Intensive Applications"
-    author: "Martin Kleppmann"
+  - { title: "The Intelligent Investor", author: "Benjamin Graham" }
+  - { title: "Designing Data-Intensive Applications", author: "Martin Kleppmann" }
+
+quote:
+  text: "Less, but better."
+  author: "Dieter Rams"
+
+# Contact tab
+contact:
+  intro: "want to build something together — or just say hi? drop me a message."
+  reply: "sounds good"
+  email: adilmodan@gmail.com
 
 footer:
   credit: Adil Modan
