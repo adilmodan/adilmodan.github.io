@@ -1,12 +1,11 @@
 name: Adil Modan
 title: Adil Modan
-tagline: Builder & Platform Engineer
 description: >-
-  Adil Modan — builder and Platform Engineer at Apple. I ship products end to
-  end: Co-Lease (group-first rentals), Tijara (halal stock screening), and
-  autonomous trading systems.
+  Engineer and builder based in the Bay Area. Building infrastructure
+  at scale, tools for Islamic finance, and whatever else is interesting.
 url: https://adilmodan.com
 baseurl: ""
+logo: /img/logo/am.png
 resume: /resume.pdf
 
 social:
@@ -31,7 +30,6 @@ exclude:
   - LICENSE
   - example
   - Screenshot*
-  - preview.html
 
 keep_files:
   - .git

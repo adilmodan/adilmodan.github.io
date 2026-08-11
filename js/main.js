@@ -1,13 +1,11 @@
 /* Subtle interaction sounds via Web Audio API */
 var audioCtx;
-var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function getAudioCtx() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   return audioCtx;
 }
 
 function playTick() {
-  if (prefersReduced) return;
   var ctx = getAudioCtx();
   var osc = ctx.createOscillator();
   var gain = ctx.createGain();
@@ -22,7 +20,6 @@ function playTick() {
 }
 
 function playPop() {
-  if (prefersReduced) return;
   var ctx = getAudioCtx();
   var osc = ctx.createOscillator();
   var gain = ctx.createGain();
@@ -43,7 +40,7 @@ function switchTab(name) {
   if (active) {
     active.classList.remove('tab-panel--active');
   }
-  navItems.forEach(function(i) {
+  document.querySelectorAll('.pill-nav__item').forEach(function(i) {
     i.classList.toggle('pill-nav__item--active', i.getAttribute('data-tab') === name);
   });
   var panel = document.getElementById('tab-' + name);
@@ -72,10 +69,8 @@ document.querySelectorAll('.card').forEach(function(card) {
   observer.observe(card);
 });
 
-var navItems = document.querySelectorAll('.pill-nav__item');
-
 /* Nav pill press effect + sound */
-navItems.forEach(function(btn) {
+document.querySelectorAll('.pill-nav__item').forEach(function(btn) {
   btn.addEventListener('mousedown', function() {
     btn.style.transform = 'scale(0.95)';
   });

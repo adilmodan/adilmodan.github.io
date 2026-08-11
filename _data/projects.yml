@@ -1,56 +1,78 @@
-# ============================================================
-# Projects. `main: true` marks the hero/featured project (Co-Lease),
-# which leads both the Home "Selected work" row and the Work tab.
-# accent ∈ {ember, blue, amber, green} → drives the card color.
-# Render: `screenshot` is shown inside the CSS device frame on the Work tab.
-# ============================================================
-
-- name: Co-Lease
-  main: true
-  status: building            # building | live
-  label: SF Housing · Marketplace
-  accent: ember
-  tagline: "Can't afford a place alone? Team up."
-  short: >-
-    A group-first rental platform — verified renters apply together with one
-    packet, to listings pulled from across the web.
-  description: >-
-    Can't afford a place alone? Team up. Co-Lease makes the renter group the
-    unit — verified roommates pool income, see what they actually qualify for,
-    and apply with a single packet to listings aggregated from Zillow,
-    Craigslist, and beyond.
-  tech: [Next.js 15, Supabase, Stripe, Checkr, Mapbox]
-  url: ""                     # not deployed yet
-  github: ""                  # add when the repo is public
-  frame_url: co-lease.com
-  screenshot: /assets/images/co-lease-home-page.png
-
 - name: Tijara
-  status: live
-  label: Shari'ah Finance
-  accent: blue
-  short: "Shari'ah-compliant stock screening, built on AAOIFI standards."
   description: >-
-    Halal investing is hard — the data's scattered and the rules are strict.
-    Tijara validates any equity against AAOIFI standards through a multi-stage
-    pipeline: qualitative screening, financial ratios, tangibility, and zakah.
-  tech: [Next.js, TypeScript, Python, Pydantic]
+    A Shari'ah-compliant stock screening engine. Multi-stage pipeline —
+    qualitative screening, financial ratios, tangibility checks, and
+    zakah computation.
+  long_description: >-
+    A Shari'ah-compliant stock screening engine. Validates equities
+    against AAOIFI Islamic finance standards through a multi-stage
+    pipeline — qualitative screening, financial ratio analysis,
+    tangibility checks, and zakah computation.
   url: https://tijara-five.vercel.app
   github: https://github.com/adilmodan/tijara
-  frame_url: tijara-five.vercel.app
-  screenshot: /assets/work/tijara.png
-
-- name: Trading Bots and Analysis
+  tech:
+    - Next.js
+    - React
+    - TypeScript
+    - Tailwind CSS
+    - Python
+    - Pydantic
+  featured: true
   status: live
-  label: Quant · Autonomous Trading
-  accent: amber
-  short: "Live on Alpaca — HMM regime detection and an AI-first trader that researches itself."
+
+- name: Trading Bot v1
   description: >-
-    Two trading systems running live on Alpaca — one reads market regimes with
-    Gaussian Hidden Markov models, the other is AI-first, running its own
-    research and optimization loops. Both backtested to the hilt.
-  tech: [Python, hmmlearn, Claude API, Alpaca]
-  url: ""
-  github: ""                  # add when the repo is public
-  frame_url: "trading-bots · dashboard"
-  screenshot: /assets/images/trading-bot-engine-home-page.png
+    Autonomous equity allocation system using Gaussian Hidden Markov Models
+    to detect market volatility regimes and dynamically adjust portfolio exposure.
+  long_description: >-
+    A mathematically-driven trading system that uses Gaussian HMMs to classify
+    markets into volatility regimes — from crash to euphoria — and dynamically
+    adjust portfolio allocation. Exhaustive walk-forward backtesting with
+    Monte Carlo stress testing ensures zero look-ahead bias. Five independent
+    circuit breakers manage risk. Trades 8 large-cap equities on 5-minute bars
+    via Alpaca.
+  image: /assets/images/trader-bot-v1.png
+  approach: Mathematical Analysis
+  approach_detail: Gaussian HMM + Walk-Forward Backtesting
+  tech:
+    - Python
+    - hmmlearn
+    - Alpaca API
+    - Streamlit
+    - pandas
+    - scikit-learn
+  highlights:
+    - 14-feature HMM pipeline with BIC model selection
+    - Walk-forward backtesting with Monte Carlo stress testing
+    - 5 independent circuit breakers for risk management
+    - Real-time Streamlit dashboard with equity curves
+  featured: false
+  status: live
+
+- name: Trading Bot v2
+  description: >-
+    AI-first trading system where every component — from research to strategy
+    optimization to execution — is driven by artificial intelligence.
+  long_description: >-
+    An AI-first approach to algorithmic trading. AI agents handle market research,
+    strategy generation, and continuous optimization. The system runs autonomous
+    research cycles, backtests strategies, and rebalances across multiple
+    timeframes — daily, weekly, and monthly. Regime detection with dynamic
+    exposure control. Trades via Alpaca with full paper and live support.
+  image: /assets/images/trader-bot-v2.png
+  approach: AI-First
+  approach_detail: AI-Driven Research + Autonomous Optimization
+  tech:
+    - Python
+    - Claude API
+    - Alpaca API
+    - Plotly
+    - pandas
+    - numpy
+  highlights:
+    - AI-driven research and strategy optimization cycles
+    - Multi-timeframe rebalancing (daily, weekly, monthly)
+    - Regime detection with dynamic exposure control
+    - Dark-themed real-time trading dashboard
+  featured: false
+  status: live
