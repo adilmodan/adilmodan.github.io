@@ -28,6 +28,11 @@ exclude:
   - README.md
   - CLAUDE.md
   - DESIGN.md
+  - DOCUMENTATION.md
+  - DOCUMENTATION.html
+  - design-brand.md
+  - interview-roadmap.md
+  - latest-doc.md
   - LICENSE
   - example
   - Screenshot*
