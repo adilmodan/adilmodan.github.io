@@ -10,15 +10,15 @@
   status: building            # building | live
   label: SF Housing · Marketplace
   accent: ember
-  tagline: "Can't afford a place alone? Team up."
+  tagline: "A group-first way to rent."
   short: >-
-    A group-first rental platform — verified renters apply together with one
-    packet, to listings pulled from across the web.
+    Lets a group of renters apply together as one verified unit, against
+    listings pulled in from across the web.
   description: >-
-    Can't afford a place alone? Team up. Co-Lease makes the renter group the
-    unit — verified roommates pool income, see what they actually qualify for,
-    and apply with a single packet to listings aggregated from Zillow,
-    Craigslist, and beyond.
+    Co-Lease treats the renter group as the unit instead of the individual.
+    Roommates pool income, see what they actually qualify for, and apply
+    with a single packet to listings pulled in from Zillow, Craigslist, and
+    other sites.
   tech: [Next.js 15, Supabase, Stripe, Checkr, Mapbox]
   url: ""                     # not deployed yet
   github: ""                  # add when the repo is public
@@ -29,11 +29,12 @@
   status: live
   label: Shari'ah Finance
   accent: blue
-  short: "Shari'ah-compliant stock screening, built on AAOIFI standards."
+  short: "Screens stocks for Shari'ah compliance against AAOIFI standards."
   description: >-
-    Halal investing is hard — the data's scattered and the rules are strict.
-    Tijara validates any equity against AAOIFI standards through a multi-stage
-    pipeline: qualitative screening, financial ratios, tangibility, and zakah.
+    Halal investing means checking a stock against a long list of rules, and
+    the data you need for that is scattered across a dozen sources. Tijara
+    runs any equity through AAOIFI's screens — business activity, financial
+    ratios, tangibility, zakah — in one pipeline.
   tech: [Next.js, TypeScript, Python, Pydantic]
   url: https://tijara-five.vercel.app
   github: https://github.com/adilmodan/tijara
@@ -44,11 +45,12 @@
   status: live
   label: Quant · Autonomous Trading
   accent: amber
-  short: "Live on Alpaca — HMM regime detection and an AI-first trader that researches itself."
+  short: "Two bots trading live on Alpaca — one on HMM regime detection, one running its own research loop."
   description: >-
-    Two trading systems running live on Alpaca — one reads market regimes with
-    Gaussian Hidden Markov models, the other is AI-first, running its own
-    research and optimization loops. Both backtested to the hilt.
+    Two systems trading live on Alpaca. One uses a Gaussian HMM to detect
+    market regimes and adjusts positioning off that. The other is
+    Claude-driven — it runs its own research and tunes its own strategy over
+    time. Both backtested extensively before either went live.
   tech: [Python, hmmlearn, Claude API, Alpaca]
   url: ""
   github: ""                  # add when the repo is public

@@ -4,16 +4,16 @@
 
 # Short bio — used in <meta> and the Home "About" preview card
 bio: >-
-  Platform Engineer at Apple by day. The rest of the time I build products
-  end to end — infrastructure to interface.
+  Platform Engineer at Apple. Outside of that I build my own products,
+  front to back.
 
 # Hero belief lines (lowercase, terse — the voice)
 beliefs:
   - "i build things."
-  - "products, mostly — a way to rent a home with friends, a halal stock screener, trading systems that run themselves."
-  - "by day, i keep apple's kubernetes clusters from going down — the kind that can't."
-  - "i think the best software gets out of your way."
-  - "and that the best problems are the ones nobody builds for, because the market looks too small."
+  - "mostly products — a way to rent a house with friends, a halal stock screener, a couple of trading bots I don't have to babysit."
+  - "day job is keeping apple's kubernetes clusters up. can't go down, so it doesn't."
+  - "i like software that just works and stays out of the way."
+  - "and I'd rather build the small, weird thing nobody else wants to than compete for the big obvious one."
 
 hero_footnote: "less, but better."
 
@@ -26,21 +26,22 @@ about_labels:
 
 about:
   - >-
-    I'm a Platform Engineer at <strong>Apple</strong>, keeping large-scale
-    Kubernetes infrastructure alive — the kind of systems that have to stay up
-    when millions of people show up at once.
+    I'm a Platform Engineer at <strong>Apple</strong>. I work on the
+    Kubernetes infrastructure other teams build on top of, mostly making
+    sure it doesn't fall over.
   - >-
-    I've always built things. I founded <strong>Marin CoWork</strong> and took
-    it from zero to profitable, writing every line of software myself — CRM,
-    payments ($27M+/yr), analytics. Before that, an EE degree at
-    San Francisco State.
+    I founded <strong>Marin CoWork</strong> and ran it profitably for a few
+    years, writing all the software myself — CRM, payments (~$27M/yr
+    processed), analytics. Before that I got an EE degree at San Francisco
+    State.
   - >-
-    Products nobody else bothers with. Right now that's <strong>Co-Lease</strong>
-    — a group-first way to rent — alongside Tijara and a pair of self-running
-    trading systems. Markets, housing, and the infrastructure beneath them.
+    Right now I'm building <strong>Co-Lease</strong>, a group-first way to
+    rent a place. Also shipping Tijara, and running a couple of trading bots
+    on the side. I keep gravitating toward housing and markets — problems
+    that feel too small or too niche for anyone else to bother with.
   - >-
-    Usually in my AI lab building apps, bots, and skills — or at the mosque, or
-    deep in a book about markets.
+    Otherwise I'm probably messing with AI agents and skills, at the mosque,
+    or reading something about markets.
 
 # Home "Now" list — Co-Lease leads (it's the main project)
 now:
@@ -80,7 +81,7 @@ quote:
 
 # Contact tab
 contact:
-  intro: "want to build something together — or just say hi? drop me a message."
+  intro: "want to build something together, or just say hi? drop me a message."
   reply: "sounds good"
   email: adilmodan@gmail.com
 

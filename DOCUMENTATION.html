@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOCUMENTATION.md — adilmodan.github.io — Documentation</title>
+<style>
+
+:root {
+  color-scheme: light;
+  --canvas: oklch(97.2% 0.003 230);
+  --surface: oklch(100% 0 0);
+  --surface-sunken: oklch(97.8% 0.003 230);
+  --border-subtle: oklch(94% 0.004 230);
+  --border-default: oklch(89.5% 0.006 230);
+  --text-primary: oklch(27% 0.012 285);
+  --text-secondary: oklch(45% 0.018 240);
+  --text-muted: oklch(56% 0.018 235);
+  --text-faint: oklch(68% 0.014 235);
+  --accent: oklch(55% 0.23 262);
+  --accent-hover: oklch(49% 0.23 262);
+  --accent-subtle: oklch(96.5% 0.028 262);
+  --accent-text: oklch(50% 0.23 262);
+  --hue-blue-subtle: oklch(96% 0.03 245);
+  --hue-blue-text: oklch(45% 0.13 245);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 999px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+}
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.topbar {
+  height: 64px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.back-link {
+  color: var(--accent-text);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--accent-subtle);
+}
+.back-link:hover { background: var(--hue-blue-subtle); }
+.crumb { color: var(--text-faint); font-size: 13px; font-family: var(--font-mono); }
+.content { flex: 1; padding: 40px 24px 80px; }
+.doc-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 2px oklch(27% 0.02 285 / 0.06), 0 8px 24px -8px oklch(27% 0.02 285 / 0.08);
+  padding: 48px 56px;
+}
+h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); }
+h1 { font-size: 1.875rem; margin: 0 0 8px; padding-bottom: 16px; border-bottom: 1px solid var(--border-subtle); }
+h2 { font-size: 1.375rem; margin: 40px 0 16px; padding-top: 4px; }
+h3 { font-size: 1.125rem; margin: 28px 0 12px; }
+h4 { font-size: 1rem; margin: 20px 0 10px; color: var(--text-secondary); }
+p { margin: 0 0 14px; color: var(--text-secondary); }
+a { color: var(--accent-text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { color: var(--text-primary); font-weight: 600; }
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+  padding: 0.15em 0.4em;
+  color: var(--text-primary);
+}
+pre {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 0 0 18px;
+}
+pre code { background: none; border: none; padding: 0; font-size: 0.82em; line-height: 1.55; }
+ul, ol { margin: 0 0 16px; padding-left: 24px; color: var(--text-secondary); }
+li { margin-bottom: 6px; }
+li > ul, li > ol { margin-top: 6px; margin-bottom: 0; }
+blockquote {
+  margin: 0 0 16px;
+  padding: 10px 18px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-subtle);
+  color: var(--text-secondary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+hr { border: none; border-top: 1px solid var(--border-subtle); margin: 32px 0; }
+.table-wrap { overflow-x: auto; margin: 0 0 20px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); }
+th { background: var(--surface-sunken); color: var(--text-secondary); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: none; }
+.footer { text-align: center; padding: 24px; color: var(--text-faint); font-size: 12.5px; font-family: var(--font-mono); }
+@media (max-width: 640px) {
+  .doc-card { padding: 32px 24px; }
+  .content { padding: 24px 12px 60px; }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="file:///Users/adilmodan/Personal/project-tracker/index.html">&larr; Project tracker</a>
+      <span class="crumb">projects/adilmodan.github.io</span>
+    </div>
+  </header>
+  <main class="content">
+    <div class="doc-card">
+      <h1 id="documentationmd--adilmodangithubio">DOCUMENTATION.md — adilmodan.github.io</h1>
+<p>Technical reference for the repo. Companion to <code>DESIGN.md</code> (visual/brand system) and <code>.claude/CLAUDE.md</code> (agent operating context) — this file focuses on architecture, build mechanics, and the protocol for agents making changes here.</p>
+<hr>
+<h2 id="1-tech-stack--core-dependencies">1. Tech Stack &amp; Core Dependencies</h2>
+<ul>
+<li><strong>Generator</strong>: Jekyll, via the <code>github-pages</code> gem (pins Jekyll + plugin versions to whatever GitHub Pages' build image supports). Declared in <code>Gemfile</code>: ``<code>ruby source "https://rubygems.org" gem "github-pages", group: :jekyll_plugins gem "jekyll-sitemap" </code>`<code> No </code>Gemfile.lock<code> is committed (it's in the Jekyll </code>exclude:<code> list in </code>_config.yml` and not tracked by git) — GitHub Pages resolves versions at build time.
+</li>
+<li><strong>Ruby</strong>: local interpreter observed is Ruby 2.6.10 / Bundler 1.17.2 (<code>ruby -v</code>, <code>bundle -v</code>). This is old relative to current GitHub Pages Ruby (3.x) — if <code>bundle install</code> fails locally with a version/native-extension error, that's the likely cause; it does not affect the GitHub Pages build itself, which runs its own image.
+</li>
+<li><strong>Markdown engine</strong>: <code>kramdown</code> (set via <code>markdown: kramdown</code> in <code>_config.yml</code>).
+</li>
+<li><strong>Jekyll plugin</strong>: <code>jekyll-sitemap</code> (listed under <code>plugins:</code> in <code>_config.yml</code>) — auto-generates <code>/sitemap.xml</code> from <code>sitemap.xml</code>'s Liquid front matter (<code>layout: null</code>) at build time.
+</li>
+<li><strong>Styling</strong>: SCSS authored in <code>_sass/main.scss</code> (single file, ~323 lines), but it is <strong>not</strong> built by Jekyll's SCSS converter. It is pre-compiled by hand via the <code>sass</code> npm CLI and the <em>output</em> is committed as a static asset: ``<code>bash npx sass _sass/main.scss assets/css/main.css --style=compressed --no-source-map </code>`<code> </code>assets/css/main.css<code> (16,347 bytes, minified, single line) is what </code>_includes/head.html<code> actually links (</code>&lt;link rel="stylesheet" href="/assets/css/main.css"&gt;<code>). This means </code>npx sass<code> (Node/npm) is a <strong>build-time dependency for the author</strong>, even though the live site has zero JS/npm runtime dependencies and Jekyll never touches </code>_sass/`.
+</li>
+<li><strong>JavaScript</strong>: <code>js/main.js</code> — vanilla ES6+, zero npm dependencies, zero external <code>&lt;script&gt;</code> libraries. Implements tab switching, <code>IntersectionObserver</code> scroll reveals, and synthesized Web Audio API click/tap sounds.
+</li>
+<li><strong>Fonts</strong>: Google Fonts, loaded via <code>&lt;link&gt;</code> in <code>_includes/head.html</code> — DM Sans (body/UI), Fraunces (display serif), JetBrains Mono (mono/technical texture).
+</li>
+<li><strong>Icons</strong>: inline SVGs (hand-authored, Lucide-style) for nav/social icons, plus the Simple Icons CDN (<code>https://cdn.simpleicons.org/{icon}/{color}</code>) for the tech-stack logos rendered from <code>_data/site.yml</code>'s <code>stack:</code> list.
+</li>
+<li><strong>Hosting</strong>: GitHub Pages, auto-build-and-deploy on push to <code>master</code> (no custom CI config, no GitHub Actions workflow in this repo — GitHub Pages' native Jekyll build handles it).
+</li>
+<li><strong>Custom domain</strong>: <code>adilmodan.com</code>, via the one-line <code>CNAME</code> file at repo root.
+</li>
+</ul>
+<h2 id="2-critical-entry-points">2. Critical Entry Points</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Path</th>
+<th>Role</th>
+</tr></thead><tbody>
+<tr>
+<td><code>_config.yml</code></td>
+<td>Jekyll site config: <code>title</code>, <code>tagline</code>, <code>description</code>, <code>url</code>, <code>baseurl</code>, <code>resume</code> path, <code>social:</code> list (GitHub/LinkedIn/Email), <code>markdown: kramdown</code>, <code>plugins: [jekyll-sitemap]</code>, <code>exclude:</code> (build-time ignore list), <code>keep_files:</code> (<code>.git</code>, <code>.gitignore</code>).</td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>The entire site. Single-page app pattern: one Jekyll page with front matter <code>layout: default</code>, containing four <code>&lt;div class="tab-panel"&gt;</code> blocks (Home/About/Work/Contact) toggled client-side by <code>js/main.js</code>'s <code>switchTab()</code> — there is no server-side routing or additional page templates.</td>
+</tr>
+<tr>
+<td><code>_layouts/default.html</code></td>
+<td>The only layout in the repo. HTML shell: <code>&lt;head&gt;</code> via <code>{% include head.html %}</code>, <code>{{ content }}</code> (renders <code>index.html</code> or <code>404.html</code>'s body), a <code>&lt;footer&gt;</code> built from <code>site.social</code> + <code>site.resume</code>, then <code>{% include scripts.html %}</code>.</td>
+</tr>
+<tr>
+<td><code>_includes/head.html</code></td>
+<td><code>&lt;head&gt;</code> partial: meta tags, OG tags, Google Fonts <code>&lt;link&gt;</code>s, and the <code>main.css</code> stylesheet link. Used by every page via <code>default.html</code>.</td>
+</tr>
+<tr>
+<td><code>_includes/scripts.html</code></td>
+<td>One line: <code>&lt;script src="/js/main.js" defer&gt;&lt;/script&gt;</code>. Used by every page via <code>default.html</code>.</td>
+</tr>
+<tr>
+<td><code>_includes/card-tags.html</code></td>
+<td>Partial for rendering a project's tech-tag pills. Takes <code>include.tags</code> (an array). Used repeatedly inside <code>index.html</code>'s Home and Work panels for each project's <code>tech[]</code> from <code>_data/projects.yml</code>.</td>
+</tr>
+<tr>
+<td><code>_includes/frame-bar.html</code></td>
+<td>Partial for the CSS "device frame" traffic-light bar + fake URL. Takes <code>include.url</code>. Used inside <code>index.html</code>'s Work tab for both the featured project and each <code>work-card</code>.</td>
+</tr>
+<tr>
+<td><code>404.html</code></td>
+<td>Standalone Jekyll page (<code>layout: default</code>), minimal not-found content.</td>
+</tr>
+<tr>
+<td><code>sitemap.xml</code></td>
+<td>Jekyll-templated (<code>layout: null</code>), single <code>&lt;url&gt;</code> entry for <code>/</code>; also duplicated by the <code>jekyll-sitemap</code> plugin's own generated sitemap — see § 3 caveat.</td>
+</tr>
+<tr>
+<td><code>preview.html</code></td>
+<td><strong>Not part of the deployed site</strong> — excluded via <code>_config.yml</code>'s <code>exclude:</code> list. A static, hand-mirrored throwaway copy of <code>index.html</code> using relative asset paths, for opening directly via <code>file://</code> to visually review changes before pushing (per its own header comment). Must be kept in sync manually if <code>index.html</code> structure changes.</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-state-management--data-flow">3. State Management &amp; Data Flow</h2>
+<p>This is a fully static site — there is no client or server "state" in the app sense. "State" here means <strong>where content lives and how it flows into the rendered HTML</strong>.</p>
+<ul>
+<li><strong>All visible copy is externalized to <code>_data/</code></strong> (YAML). Per <code>.claude/CLAUDE.md</code>'s own stated constraint: <em>"All content from YAML — never hardcode text in HTML templates."</em> Three files:
+<ul>
+<li><code>_data/site.yml</code> — bio, hero <code>beliefs[]</code>, <code>hero_footnote</code>, <code>about_labels[]</code> + <code>about[]</code> (index-aligned pairs), <code>now[]</code> (label+color), <code>stack[]</code> (name/icon slug/color for Simple Icons), <code>interests[]</code>, <code>reading[]</code> (title/author), <code>quote</code> (text/author), <code>contact</code> (intro/reply/email), <code>footer.credit</code>.
+</li>
+<li><code>_data/experience.yml</code> — array of 4 job objects (<code>company</code>, <code>url</code>, <code>time</code>, <code>position</code>); <code>index.html</code> only reads <code>{% assign job = site.data.experience | first %}</code> — i.e. only the <strong>most recent</strong> job (Apple) is rendered, on the Home "bottom row." The other 3 entries exist in data but are currently unused by any template.
+</li>
+<li><code>_data/projects.yml</code> — array of project objects: <code>name</code>, <code>main</code> (bool — exactly one should be <code>true</code>; it's the hero/featured project), <code>status</code> (<code>building</code> | <code>live</code>), <code>label</code>, <code>accent</code> (<code>ember</code>|<code>blue</code>|<code>amber</code>|<code>green</code> → CSS card color variant), <code>tagline</code>, <code>short</code> (Home teaser copy), <code>description</code> (Work tab copy), <code>tech[]</code>, <code>url</code>, <code>github</code>, <code>frame_url</code>, and either <code>screenshot</code> (image path) or an implied CSS mock. Currently 3 entries: Co-Lease (<code>main: true</code>, building), Tijara (live), Trading Bots and Analysis (live).
+</li>
+</ul>
+</li>
+<li><strong>Build-time data flow (Jekyll)</strong>: at build, Jekyll reads every <code>.yml</code>/<code>.yaml</code> file under <code>_data/</code> into the <code>site.data</code> Liquid namespace (e.g. <code>site.data.projects</code>, <code>site.data.site.beliefs</code>). <code>index.html</code> and <code>_layouts/default.html</code> consume this via Liquid <code>{% for %}</code> / <code>{{ }}</code> — e.g. <code>{% for belief in site.data.site.beliefs %}</code> in the hero, <code>{% assign main = site.data.projects | where: "main", true | first %}</code> to pick the featured project. <code>_includes/card-tags.html</code> and <code>frame-bar.html</code> receive per-call parameters (<code>include.tags</code>, <code>include.url</code>) rather than reading <code>site.data</code> directly, so they're reusable across both the Home and Work panels.
+</li>
+<li><strong>Render pipeline</strong>: <code>_layouts/<em></code> + <code>_includes/</em></code> + <code>_data/*</code> + page front matter → Liquid template evaluation → kramdown (for any Markdown content — none of the current <code>.html</code> pages actually rely on Markdown conversion; only stray root-level <code>.md</code> files like <code>interview-roadmap.md</code> would be run through kramdown, and only if they carry front matter, which they don't, so Jekyll copies them through as static files, unconverted) → static HTML/CSS/JS emitted to <code>_site/</code> (gitignored, not committed) → GitHub Pages serves <code>_site/</code> as the live site.
+</li>
+<li><strong>CSS is out-of-band</strong>: <code>_sass/main.scss</code> is <em>not</em> part of this data flow — Jekyll's built-in SCSS/Sass converter is deliberately bypassed (per <code>.claude/CLAUDE.md</code> constraint #3: "No Jekyll SCSS"). The author runs <code>npx sass</code> manually, and the compiled <code>assets/css/main.css</code> is committed and served as a plain static asset like any image.
+</li>
+<li><strong>Client-side "state"</strong>: purely UI state in <code>js/main.js</code> — which <code>.tab-panel</code> has <code>--active</code>, which <code>.card</code>s have been revealed (<code>.is-visible</code>, tracked via a <code>WeakSet</code>-like one-shot <code>IntersectionObserver.unobserve</code>), and nav press styling. Nothing persists across page loads (no <code>localStorage</code>/cookies/query params read).
+</li>
+<li><strong>Sitemap caveat</strong>: both a hand-written <code>sitemap.xml</code> (Liquid template, single URL) and the <code>jekyll-sitemap</code> plugin (which auto-generates its own <code>sitemap.xml</code> from all site pages) are present simultaneously — the plugin's output will overwrite the hand-written one at build time since they share the output path. Worth flagging if sitemap content ever looks wrong; the hand-written file is effectively dead weight.
+</li>
+</ul>
+<h2 id="4-directory-map">4. Directory Map</h2>
+<pre><code>_layouts/
+  default.html        Only layout in the repo. HTML shell + footer + script include.
+_includes/
+  head.html            &lt;head&gt; partial: meta/OG tags, Google Fonts, main.css link.
+  scripts.html         Single &lt;script src=&quot;/js/main.js&quot; defer&gt; tag.
+  card-tags.html       Tech-tag pill list partial, parameterized by include.tags.
+  frame-bar.html       Device-frame traffic-light bar + fake URL, param include.url.
+_sass/
+  main.scss            ALL styles, single file (~323 lines), 10 numbered sections:
+                        vars -&gt; reset/layout -&gt; nav -&gt; grids -&gt; card base -&gt;
+                        color variants -&gt; components -&gt; footer -&gt; mobile breakpoints
+                        -&gt; entrance animations. Source of truth for assets/css/main.css.
+_data/
+  site.yml             All non-project, non-experience copy (bio, beliefs, about,
+                        now, stack, interests, reading, quote, contact, footer).
+  experience.yml       4 job entries; only the first (most recent) is rendered.
+  projects.yml         3 project entries (Co-Lease/main, Tijara, Trading Bots).
+js/
+  main.js              Vanilla JS: switchTab(), IntersectionObserver reveals,
+                        Web Audio tick/pop sounds, nav press effect.
+assets/
+  css/main.css         Pre-compiled, minified output of _sass/main.scss. Committed.
+  images/              co-lease-home-page.png, trading-bot-engine-home-page.png
+                        (Work-tab screenshots for Co-Lease and Trading Bots).
+  work/                tijara.png (real headless-Chrome capture of the live Tijara site).</code></pre>
+<p>Root-level files of note not covered above:</p>
+<ul>
+<li><code>resume.pdf</code> — downloadable resume, linked from <code>site.resume</code> (<code>/resume.pdf</code>) in <code>_config.yml</code>, used in the footer and the Home social row.
+</li>
+<li><code>robots.txt</code>, <code>sitemap.xml</code> — SEO plumbing (see § 3 sitemap caveat).
+</li>
+<li><code>DESIGN.md</code> — the design/brand system spec (colors, typography, layout, motion). Excluded from the Jekyll build via <code>_config.yml</code>'s <code>exclude:</code> list.
+</li>
+<li><code>.claude/CLAUDE.md</code> — AI-agent operating context for this repo (stack summary, file structure, constraints). Excluded from the Jekyll build both by <code>_config.yml</code> (<code>exclude: [CLAUDE.md]</code>) and by <code>.gitignore</code> (<code>.claude/</code>), so <code>.claude/</code> itself isn't even version-controlled.
+</li>
+<li><strong>Untracked / likely stray files</strong> (present in the working tree, <code>git status</code> shows them as <code>??</code>, not referenced by any template or <code>_config.yml</code>): <code>design-brand.md</code>, <code>latest-doc.md</code>, <code>interview-roadmap.md</code>. None are linked from <code>index.html</code>, <code>_layouts/</code>, or <code>_includes/</code>, and none are in <code>_config.yml</code>'s <code>exclude:</code> list, so if committed as-is they would be copied verbatim into the built site output as unstyled loose <code>.md</code> files reachable by direct URL (e.g. <code>/interview-roadmap.md</code>). <code>linkedin-rewrite.md</code> is the one exception in this group — it <strong>is</strong> already tracked/committed in git, but is likewise not referenced by any template.
+</li>
+<li><code>preview.html</code> — see § 2. Explicitly excluded from the build.
+</li>
+<li>Four root-level <code>Screenshot 2026-04-<em>.png</code> files — gitignored (<code>Screenshot</em></code> in <code>.gitignore</code>) and Jekyll-excluded (<code>Screenshot*</code> in <code>_config.yml</code>); safe to delete, they are ad hoc local captures, not site assets.
+</li>
+</ul>
+<h2 id="5-local-setup-commands">5. Local Setup Commands</h2>
+<pre><code class="language-bash"># Install Ruby gems (Jekyll + github-pages + jekyll-sitemap)
+bundle install
+
+# Serve locally with live rebuild at http://localhost:4000
+bundle exec jekyll serve
+
+# One-time or after any _sass/main.scss edit — Jekyll does NOT compile SCSS here
+npx sass _sass/main.scss assets/css/main.css --style=compressed --no-source-map</code></pre>
+<p>There is <strong>no lint script, no <code>package.json</code>, no <code>Rakefile</code>/<code>Makefile</code></strong> in this repo (verified — none present at root). The only non-Ruby tooling dependency is the <code>sass</code> npm CLI, invoked ad hoc via <code>npx sass</code> and not declared in any manifest. Verify locally installed Ruby/Bundler versions before troubleshooting <code>bundle install</code> failures — the environment's Ruby (2.6.10 / Bundler 1.17.2) is older than current GitHub Pages build images, which can cause native-extension or dependency resolution errors that do not reproduce on the actual GitHub Pages deploy.</p>
+<h2 id="6-fan-out-agent-blueprint-principal-engineer-protocol">6. Fan-Out Agent Blueprint (Principal Engineer Protocol)</h2>
+<h3 id="context-isolation">Context Isolation</h3>
+<p>Confine all reads, greps, and edits to <code>/Users/adilmodan/Personal/projects/adilmodan.github.io</code>. Do not read or reference sibling directories under <code>/Users/adilmodan/Personal/projects/</code> — this repo has no dependency on, and no shared tooling with, any neighboring project.</p>
+<h3 id="code-style--guardrails">Code Style &amp; Guardrails</h3>
+<ul>
+<li><strong>Liquid templating</strong>: match the existing terse, single-line-per-element style in <code>index.html</code> — e.g. <code>{% for p in site.data.projects %}{% unless p.main %}...{% endunless %}{% endfor %}</code> on one logical block, <code>{% assign %}</code> for derived values (see the <code>main</code> project lookup at the top of <code>index.html</code>). Prefer <code>_includes/</code> partials with <code>include.*</code> parameters (as <code>card-tags.html</code> and <code>frame-bar.html</code> already do) over inlining repeated markup.
+</li>
+<li><strong>SCSS / <code>_sass</code> conventions</strong>: per <code>.claude/CLAUDE.md</code> constraint #7, <strong>do not split <code>_sass/main.scss</code> into partials</strong> — everything lives in this single file, in its existing 10 numbered sections (see § 4 above). Use the existing CSS custom property tokens (<code>--bg</code>, <code>--ink</code>, <code>--ember</code>, <code>--blue</code>, etc., defined in <code>:root</code> at the top of the file) rather than introducing new hardcoded hex values. Class naming is BEM-ish with <code>__</code> for elements and <code>--</code> for variants (e.g. <code>.card__label</code>, <code>.card--blue</code>, <code>.pjt-main__t</code>). After any <code>_sass/main.scss</code> edit, always recompile with the exact <code>npx sass ...</code> command in § 5 and commit the regenerated <code>assets/css/main.css</code> alongside the source change — the compiled file is hand-maintained, not CI-generated.
+</li>
+<li><strong>Data/collections naming</strong>: this repo has no Jekyll <em>collections</em> (no <code>_posts/</code>, no custom collection directories) — content lives entirely in <code>_data/</code> YAML arrays (<code>experience.yml</code>, <code>projects.yml</code>) consumed by <code>index.html</code>, not as individual Jekyll documents. New "repeatable" content (e.g. a 4th project) should be added as a new array entry in the relevant <code>_data/*.yml</code> file, matching the exact key schema of existing entries (see § 3) — never as a new template file.
+</li>
+<li><strong>No JS libraries, no dark mode, no hardcoded copy in HTML</strong> — these are explicit, owner-stated constraints in <code>.claude/CLAUDE.md</code>; treat them as hard guardrails, not suggestions.
+</li>
+</ul>
+<h3 id="proactive-refactoring--file-cleanup">Proactive Refactoring &amp; File Cleanup</h3>
+<p>Authorized, within this repo only, to:</p>
+<ul>
+<li>Delete the four stray root-level <code>Screenshot 2026-04-*.png</code> files (already gitignored/Jekyll-excluded; purely local scratch captures).
+</li>
+<li>Investigate and, if confirmed truly unused, remove <code>interview-roadmap.md</code>, <code>latest-doc.md</code>, <code>design-brand.md</code> (untracked) and <code>linkedin-rewrite.md</code> (tracked) — none are referenced by any template, nav item, or <code>_config.yml</code> entry as of this writing (see § 4). Confirm with a fresh <code>grep -rn</code> across <code>*.html</code>/<code>_data</code>/<code>_sass</code>/<code>js</code> before deleting a tracked file like <code>linkedin-rewrite.md</code>, since removing tracked content is a more visible change than removing untracked scratch files.
+</li>
+<li>Resolve the duplicate-sitemap issue in § 3 (hand-written <code>sitemap.xml</code> vs. <code>jekyll-sitemap</code> plugin output) if it's actually causing wrong sitemap content — otherwise leave it, since the plugin output silently wins already.
+</li>
+<li>Split an <code>_includes/</code> partial further if it grows beyond a single clear responsibility (the existing ones — <code>card-tags.html</code>, <code>frame-bar.html</code> — are each one line; keep that granularity as a model, don't prematurely consolidate them).
+</li>
+<li>Fix formatting drift in <code>index.html</code>'s Liquid blocks to match the terse, one-line style already established, within the scope of whatever feature branch is active.
+</li>
+</ul>
+<h3 id="change-documentation-protocol">Change Documentation Protocol</h3>
+<p>Before marking any task complete, append a dated entry to <code>CHANGELOG.md</code> at repo root (create the file if it does not yet exist) describing what changed and why. Do not create or modify <code>CHANGELOG.md</code> as part of writing this DOCUMENTATION.md — this protocol applies to future feature/fix work in this repo, not to this documentation pass itself.</p>
+<h3 id="definition-of-done">Definition of Done</h3>
+<ol>
+<li>Run <code>bundle exec jekyll build</code> locally and confirm it completes without errors or Liquid/YAML warnings.
+</li>
+<li>Manually open the built <code>_site/index.html</code> (or run <code>bundle exec jekyll serve</code> and load <code>http://localhost:4000</code>) and confirm all four tabs (Home/About/Work/Contact) render, project data from <code>_data/projects.yml</code> appears correctly, and — if <code>_sass/main.scss</code> was touched — that <code>assets/css/main.css</code> was regenerated via the exact <code>npx sass</code> command in § 5 and the visual result matches expectations.
+</li>
+<li>Only then append the <code>CHANGELOG.md</code> entry and consider the task complete.
+</li>
+</ol>
+    </div>
+  </main>
+  <footer class="footer">Generated documentation &middot; /Users/adilmodan/Personal/projects/adilmodan.github.io/DOCUMENTATION.md</footer>
+</div>
+</body>
+</html>
