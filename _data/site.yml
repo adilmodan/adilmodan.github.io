@@ -10,10 +10,9 @@ bio: >-
 # Hero belief lines (lowercase, terse — the voice)
 beliefs:
   - "i build things."
-  - "mostly products — a way to rent a house with friends, a halal stock screener, a couple of trading bots I don't have to babysit."
-  - "day job is keeping apple's kubernetes clusters up. can't go down, so it doesn't."
-  - "i like software that just works and stays out of the way."
-  - "and I'd rather build the small, weird thing nobody else wants to than compete for the big obvious one."
+  - "by day, i build and maintain the infrastructure Apple's other teams build on top of."
+  - "i spend my free time researching AI workflows and building for problems nobody else bothers with."
+  - "i think the best software is invisible, and invisible is the hardest thing to build."
 
 hero_footnote: "less, but better."
 
@@ -31,13 +30,13 @@ about:
     sure it doesn't fall over.
   - >-
     I founded <strong>Marin CoWork</strong> and ran it profitably for a few
-    years, writing all the software myself — CRM, payments (~$27M/yr
+    years, writing all the software myself: CRM, payments (~$27M/yr
     processed), analytics. Before that I got an EE degree at San Francisco
     State.
   - >-
     Right now I'm building <strong>Co-Lease</strong>, a group-first way to
     rent a place. Also shipping Tijara, and running a couple of trading bots
-    on the side. I keep gravitating toward housing and markets — problems
+    on the side. I keep gravitating toward housing and markets, problems
     that feel too small or too niche for anyone else to bother with.
   - >-
     Otherwise I'm probably messing with AI agents and skills, at the mosque,

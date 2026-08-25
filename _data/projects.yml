@@ -33,8 +33,8 @@
   description: >-
     Halal investing means checking a stock against a long list of rules, and
     the data you need for that is scattered across a dozen sources. Tijara
-    runs any equity through AAOIFI's screens — business activity, financial
-    ratios, tangibility, zakah — in one pipeline.
+    runs any equity through AAOIFI's screens: business activity, financial
+    ratios, tangibility, zakah, all in one pipeline.
   tech: [Next.js, TypeScript, Python, Pydantic]
   url: https://tijara-five.vercel.app
   github: https://github.com/adilmodan/tijara
@@ -45,11 +45,11 @@
   status: live
   label: Quant · Autonomous Trading
   accent: amber
-  short: "Two bots trading live on Alpaca — one on HMM regime detection, one running its own research loop."
+  short: "Two bots trading live on Alpaca: one on HMM regime detection, one running its own research loop."
   description: >-
     Two systems trading live on Alpaca. One uses a Gaussian HMM to detect
     market regimes and adjusts positioning off that. The other is
-    Claude-driven — it runs its own research and tunes its own strategy over
+    Claude-driven, running its own research and tuning its own strategy over
     time. Both backtested extensively before either went live.
   tech: [Python, hmmlearn, Claude API, Alpaca]
   url: ""
