@@ -23,7 +23,8 @@
   url: ""                     # not deployed yet
   github: ""                  # add when the repo is public
   frame_url: co-lease.com
-  screenshot: /assets/images/co-lease-home-page.png
+  screenshot: /assets/images/co-lease-home-page.jpg
+  alt: "Co-Lease homepage showing a verified renter group and their matched listings"
 
 - name: Tijara
   status: live
@@ -39,7 +40,8 @@
   url: https://tijara-five.vercel.app
   github: https://github.com/adilmodan/tijara
   frame_url: tijara-five.vercel.app
-  screenshot: /assets/work/tijara.png
+  screenshot: /assets/work/tijara.jpg
+  alt: "Tijara dashboard screening a stock against AAOIFI Shari'ah standards"
 
 - name: Trading Bots and Analysis
   status: live
@@ -55,4 +57,5 @@
   url: ""
   github: ""                  # add when the repo is public
   frame_url: "trading-bots · dashboard"
-  screenshot: /assets/images/trading-bot-engine-home-page.png
+  screenshot: /assets/images/trading-bot-engine-home-page.jpg
+  alt: "Trading bot dashboard showing live equity curves across four strategies"

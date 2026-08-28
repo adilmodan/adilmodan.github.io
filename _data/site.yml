@@ -71,8 +71,9 @@ interests:
   - Infrastructure at scale
 
 reading:
-  - { title: "The Intelligent Investor", author: "Benjamin Graham" }
-  - { title: "Designing Data-Intensive Applications", author: "Martin Kleppmann" }
+  - { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky" }
+  - { title: "The Incoherence of the Philosophers", author: "Al-Ghazali" }
+  - { title: "The Genius Makers", author: "Cade Metz" }
 
 quote:
   text: "Less, but better."
@@ -81,7 +82,6 @@ quote:
 # Contact tab
 contact:
   intro: "want to build something together, or just say hi? drop me a message."
-  reply: "sounds good"
   email: adilmodan@gmail.com
 
 footer:
